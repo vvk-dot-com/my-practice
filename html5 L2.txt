@@ -1,0 +1,411 @@
+The below MCQ's contains HTML L2 | Wipro TrendNxt Dumps.
+
+1>Which types of the border style can looks as though it were embedded in the canvas?
+
+	inset
+
+2> In regards to the CSS box model,where is the margin property located?
+
+	Outside the box
+
+ 3>Which Represents a line that acts as a boundary?
+
+	Border
+
+ 4>Which properties does not have a background color,it is completely transparent?
+
+	Margin
+
+ 5>Elements can be floated top and bottom true or false
+
+	FALSE
+
+ 6>Relative size is
+
+    Sets the size relative to surrounding elements
+
+ 7>Grouping Css is used to
+
+	Minimize the code
+
+ 8>Internet Explorer uses....................... Property to create transparent images. 
+
+	Filter: alpha(opacity=x)
+
+ 9>Which HTML attribute is used to define inline styles? 
+
+	style
+
+ 10>Which of the following are list-style property
+
+	list-style-type and b) list-style-position
+
+11>The ________ property is used alongwith position property to create an effect of layers
+
+	z-index
+
+ 12>Which of the following is used to represent unvisited hyperlink.
+
+	:link
+
+ 13>Which of the following is/are the possible values of CSS pseudo element property? i): first line ii): last-line iii): before iv): after v): between
+
+	a) i,iii and iv only
+
+14>Which part of the box,where text and images appear?
+
+	d) Content
+
+
+
+15>p.outset{border-style: outset; } In the code snippet above,which part represents the property?
+
+	c) border-style
+
+16>Which of the following is the correct HTML is for making a text area 
+
+	b)textarea 
+
+17>Which of the following enables an extra set of restrictions for the content in an&lt;iframe&gt; 
+
+	a) sandbox
+
+ 18>Which of the following is a form event attribute that fires the moment that the element loses focus ?
+
+	c) onblur
+
+19>Which of the following is a mouse event attribute that fires when the mouse pointer moves over an element ?
+
+	onmousemove
+
+ 20>Which of the following is a mouse event attribute that fires when the mouse pointer moves out of an element ? 
+
+	c) onmouseout
+
+  21>Which types of the border style can looks as though it were embedded in the canvas?
+
+	inset
+
+22>The box model applies to
+
+	a) block-level elements
+
+23>Which Represents a line that acts as a boundary?
+
+	c) Border
+
+24>The overflow property in CSS can take one of the following values. i)visible ii)hidden iii)scroll iv)non-scroll v)auto
+
+	b) i,ii,iii and v only
+
+25>If an image is floated to the right,a following text flows around it,to the
+
+	a) right
+
+26>Font size with&nbsp; ___________ allow users to resize the text(in the browser menu)
+
+	a) em
+
+27>Which of the following is&nbsp; Adjacent Sibling Selector
+
+	d) plus
+
+28>Which of the following is the correct HTML is for inserting a background image ?
+
+	d)body background="bgimage.gif”;
+
+29>The link tag goes inside
+
+	the head section
+
+29>Which of the following specifies the type of list-item marker
+
+	c) list-style-type
+
+30>The element needing multiple borders should have its
+
+	c) own border and relative positioning
+
+31>We write single ______ before the pseudo-class property.
+
+	a) Colon
+
+32>The&nbsp; ___________ pseudo-element is used to add a special style to the first line of a para or text
+
+	a) ::first-line
+
+33>Which is the correct CSS syntax?
+
+	d) body{color: black;}
+
+34>p{ width:220px; padding:10px; border:5px solid gray; margin:0px; } The total width of an element is calculated like this:
+
+	b) Total element width = width + left padding + right padding + left border + right border + left margin + right margin
+
+35>Which of the following is the correct HTML is for making a text input field ?
+
+	d) input type="text"
+
+35>You can add names to each frame window using which setting ?
+
+	a) name
+
+36>Which of the following is a keyboad event attribute that fires when a user is pressing a key ?
+
+	b) onkeydown
+
+37>Which of the following is a mouse event attribute that fires when the mouse pointer moves over an element ?	
+
+	onmousemove
+
+38>Which of the following is a window event attribute that fires once a page has unloaded ?
+
+
+
+     Onunload
+
+39> Block elements can be center-aligned by setting the left and right margins to ___________
+
+a) 0
+
+b) center
+
+c) top
+
+d) auto
+
+Ans:d) auto
+
+40> State True or False for CSS outlines properties. i)An outline does take up space ii)Outline do not have to be rectangular. iii)Outline is always the same on all sides.</span></legend><div class="qm_QUESTION_mc">
+
+a) i-True,ii-True,iii-False
+
+b) i-False,ii-False,iii-True
+
+c) i-True,ii-False,iii-True
+
+d) i-False,ii-True,iii-True
+
+Ans:d) i-False,ii-True,iii-True
+
+41> In regards to the CSS box model,where is the margin property located?
+
+a) Inside the box
+
+b) Outside the box
+
+c) It could be inside or outside the box,depending on where you place it in your code
+
+d) None of the above.
+
+Ans:b) Outside the box
+
+ 42> The_____________ property indicates whether a cell without any content should have a border displayed.
+
+a) blank-cells
+
+b) empty-cells
+
+c) nocontent-cells
+
+d) noborder-cells
+
+Ans:b) empty-cells
+
+
+
+43>Elements after the floating element will flow around it. To avoid this,we use the ___________ property.
+
+ a) clear
+
+ b) reverse float
+
+ c) float
+
+ d) None of the above
+
+Ans: a) clear
+
+ 44> Font size with&nbsp; ___________ allow users to resize the text(in the browser menu)
+
+ a) em
+
+ b) px
+
+ c) Both
+
+ d) None of the above
+
+ Ans: a) em
+
+  45> Grouping Css is used to
+
+ a) Old style coding
+
+ b) minimize the code
+
+ c) readable code
+
+ d) None of the above
+
+ Ans: b) minimize the code
+
+ 46> Which of the following is the correct HTML is for inserting a background image ?
+a) background img href="bgimage.gif"
+
+b) background img="bgimage.gif"
+
+c) img src="bgimage.gif" background
+
+d) body background="bgimage.gif"
+
+Ans: d) body background="bgimage.gif"
+
+47> Which states whether the text is underlined or not?
+
+a) text-decoration:
+
+b) text-transform:
+
+c) text-spacing:
+
+d) text-shadow:
+
+Ans:a) text-decoration:
+
+48> A list which is provided with a bullet(a black dot)is called an
+
+ a) Ordered List
+
+ b) Unordered List
+
+ c) Definition List
+
+ d) None of the above
+
+ Ans: b) Unordered List
+
+ 49> In which position it will be calculated from the upper left corner of the parent layer?
+
+a) position:absolute
+
+
+
+b) position:relative
+
+c) position:abs
+
+d) position:rel
+
+Ans:a) position:absolute
+
+50> Which of the following is used to represent unvisited hyperlink.
+
+a) :nonvisited
+
+b) :link
+
+c) :unvisited
+
+d) :fresh
+
+Ans:b) :link
+
+51> ::selection is used for
+
+a) used to define class for select box
+
+b) Selects the portion of an element that is selected by a user
+
+c) used to define class for options in selectbox
+
+d) None of the above
+
+Ans:b) Selects the portion of an element that is selected by a user
+
+52> Which is the correct CSS syntax?
+
+ a) {body:color=black;}
+
+ b) {body;color:black;}
+
+ c) body:color=black;
+
+ d) body{color: black;}
+
+ Ans:d) body{color: black;}
+
+ 53> p.outset{border-style: outset; } In the code snippet above,which part represents the property?
+ a) outset
+
+ b) p
+
+ c) border-style
+
+ d) None of the above
+
+ Ans: c) border-style
+
+  54> Which of the following is the correct HTML is for making a text input field ?
+
+ a) textfield;
+
+ b) input type="textfield"
+
+ c) inputtext;
+
+ d) input type="text"
+
+ Ans:d) input type="text"
+
+  55> You can add names to each frame window using which setting ?
+
+ a) name
+
+ b) src
+
+ c) ur
+
+ d) frameName
+
+ Ans:a) name
+
+  56> Which of the following is a form event attribute that fires the moment that the element loses focus ?
+
+ a) onlosefocus
+
+ b) onunfocus
+ c) onblur
+
+ d) ondeactivate
+
+ Ans: c) onblur
+
+  57> Which of the following is a keyboad event attribute that fires when a user is pressing a key ?-- careful when answering(Ambiquious question)
+
+ a) onkeydown
+
+ b) onkeypress
+
+ c) ondown
+
+ d) oneventdown
+
+ Ans: a) onkeydown
+
+  58> Which of the following is a keyboad event attribute that fires when a user is presses a key ?-- careful when answering(Ambiquious question)
+
+ a) onkeydown
+
+ b) onkeypress
+
+ c) onpress
+
+ d) oneventpress
+
+ Ans:b) onkeypress
+
+
+59>Which property is used to change the background color?
+
+    background-color

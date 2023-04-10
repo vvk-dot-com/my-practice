@@ -1,0 +1,72 @@
+import React, { useState, useEffect } from 'react';
+
+const App = () => {
+  
+  const [city, setCity] = useState(" London");
+  const [forecast,setForecast]=useState(null);
+  const [forecastDays, setForecastDays] = useState([]);
+  const API_KEY = '69c2e6efa0d48a8fe9097f12e646e9dc'; // API key
+
+  const handleSearch = e=> {
+    e.preventDefault();
+    const newCity=e.target.elements.city.value;
+    setCity(newCity);
+  }
+  useEffect(()=>{
+    if(city){ 
+      const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&Appid=${API_KEY}&units=metric`;
+      fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        // filter the data to get one forecast per day
+        const dailyData = data.list.filter(item => item.dt_txt.includes('12:00:00'));
+        setForecast(dailyData);
+
+        // get the next 5 days and dates
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const forecastDays = [];
+        for (let i = 0; i < 5; i++) {
+          const date = new Date();
+          date.setDate(date.getDate() + i);
+          const dayOfWeek = days[date.getDay()];
+          const month = date.toLocaleString('default', { month: 'long' });
+          const day = date.getDate();
+          forecastDays.push({ dayOfWeek, month, day });
+        }
+        setForecastDays(forecastDays);
+      })
+      .catch(error => console.error(error));
+
+    }
+  })
+   
+  return (
+    <div>
+      <div>
+            <form onSubmit={e=>{e.preventDefault();setCity(e.target.elements.city.value)}}>
+                <label> Enter city: <input type={"text"} name="city" placeholder="enter a city" /> </label>
+                <button onClick={handleSearch} >Submit</button>
+            </form>
+      </div>
+      {forecast.length > 0 && (
+        <div>
+          <h4>{city}</h4>
+          <h2>{forecast[0].name}</h2>
+          {forecastDays.map((day, index) => (
+            <div key={index}>
+             <h4>{day.month} {day.day}, {day.dayOfWeek}</h4>
+             <p> <img src={`https://openweathermap.org/img/w/${forecast[index].weather[0].icon}.png`} alt="weather icon" />
+              {forecast[index].weather[0].description}</p>
+              <p>Temperature: {forecast[index].main.temp}°C</p>
+              <p>Humidity: {forecast[index].main.humidity}%</p>
+              <p>Wind Speed: {forecast[index].wind.speed} km/h</p>
+              
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default App;

@@ -1,0 +1,167 @@
+import React,{useState} from 'react';
+import Test from '. Test';
+
+const App = () => {
+  const[data,setData]=useState({
+    Email:'',
+    password:''
+  })
+  const changeHandler= e=>{
+    setData({...data,[e.target.name]:e.target.value})
+  }
+  const submitHandler =e=>{
+    e.preventDefault();
+    if(data.password.length<5){
+      alert("provide password length must be 8 letters");
+    }
+    else{
+     console.log(data);
+  }}
+  return (
+    <div>
+    <center>
+      <form onSubmit={submitHandler}>
+        <label style={{'color':'red','fontFamily':'robot'}}>UserName< label><br>< br>
+        <input type="text" name="E-mail" onChange={changeHandler}>< input><br>< br>
+        <label>password< label><br>< br>
+        <input type="password" name="password" onChange={changeHandler}>< input><br>< br>
+        <input type="submit" value="Login" className="btn btn-primary">< input>
+      < form>
+    < center>
+    < div>
+  )
+}
+
+export default App;
+_______________________________________________________________________
+
+
+lifecycle in class based components;
+===================================
+
+process of executing methods.
+
+==>also known as side effects in functional components:useEffect()
+
+ex: alerts msg in shopping cart(like adding product to cart, added to wishlist, remove from cart, successfully order placed)
+
+class based components can't use react hooks.
+_______________________________________________________________________
+componentDidMount():
+=================
+->execute only when immedaite action of random done.(immediate next after method return, get data, call apis) called once component mounted(was evaluated &rendered):useEffect(.....[])
+_______________________________________________________________________
+componentDidUpdate():
+===================
+->triggers when state value or any value updates.useEffect(.....,[someValue])
+_______________________________________________________________________
+componentWillMount():
+==================
+->triggers when component removes deletes from DOM(user interface). (    useEffect(() => {return () =>{....}},[])   )
+_______________________________________________________________________
+
+in app.js
+=========
+<BrowserRouter>
+                <Routes>
+                  <Route path=' ' element={<Home  >}  > 
+                  <Route path=' dashboard :user' element={<Dashboard  >}  > 
+                  <Route path=' about' element={<About  >}  >  
+                < Routes>
+            < BrowserRouter>
+
+_______________________________________________________________________
+
+
+URL parameters:
+==============
+path params:cant'assign data to variable while sending data
+````````````
+****need to import useparams from react-router-dom****
+
+<Route path=' dashboard :name > in app.js
+<Link to=' dashbaord john' > in home.js
+<p>name: params.name<p>
+
+
+Query params: can assign data to variable while sending data
+`````````````
+****need to import useLocation from react-router-dom along with useparams****
+
+<Route path=' dashboard> in app.js
+<Link to=' dashbaord?name=john' > in home.js
+<p>name : params.name<p>
+====================================================================================
+HOC: higher order component
+Is advance technique in react for reusing component logic.
+Pure function with zero side effects.
+Is a function that takes a component and returns a new component with additional data.
+Can use same logic(component) for different components by addding modifications(for ex: to authentication pages) 
+and rendering with main js file like below.
+______________________________________________________________
+Hoc.js
+import React from 'react'
+
+const Hoc = (Component) => {
+  return (
+    class extends React.Component{
+        state ={
+            auth:true
+        }
+    render(){
+        return(
+            <div>
+                {this.state.auth ? <Component name="vamshi" > : <h1>Please Login< h1>}
+            < div>
+        )
+    }
+    }
+  )
+}
+
+export default Hoc;
+-------------------------------
+app.js
+ import react from 'react';
+   import Hoc from '. Hoc';
+
+   const App =(props) =>{
+       return (
+           <h1> welcome {props.name}< h1>
+       )
+   }
+
+   export default Hoc(App);
+
+=====================================================================================
+Handling API Data:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

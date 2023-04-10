@@ -1,0 +1,1696 @@
+
+hello everybody and welcome back to the channel in this video what we're going to cover is a material ui 5 and this is
+0:13
+a terrific react ui library now what exactly does that mean
+0:20
+well it is a library that provides us with a bunch of ui elements so for
+0:26
+example if in our react app we need a calendar we don't have to go ahead and
+0:32
+build it on ourselves what we can do is we can download this library and use
+0:37
+this ui element which is the calendar so really it just contains a bunch of ui
+0:43
+elements that we can utilize rather than building it from scratch and reinventing the wheel
+0:48
+and right here on the mui.com website you can see an example of some of the elements that they have
+0:55
+so over here we have a calendar over here we have this play button we have a select we have uh
+1:01
+different tables and these actually utilize some of the design best practices so your application will
+1:08
+actually include that in as well so over here on the mui.com website what
+1:14
+you can do is you can go to the docs and then once you go to the docs let me zoom in here once more you can actually
+1:19
+go to the components and then in here you can see all of the different ui elements you can utilize in your react
+1:26
+application and actually if you click on one of them so let's say i click on alerts you can see some of the examples
+1:32
+and you can also see the source code and because there's so many ui elements in
+1:38
+this crash course we're going to be utilizing and learning how to use the documentation to incorporate these
+1:44
+elements inside of our application so we're going to be in the docs a lot because we're not going to be able to
+1:50
+cover all of these elements in this crash course else this crash course
+1:55
+would probably be like 10 hours long all right so with that being said let's actually look at what we're going to be
+2:00
+building we're going to be building a tourism website so over here you can see we have a tourism website and we have a
+2:07
+bunch of different tours these are the top niagara tours these are the top las vegas tours and you can see that there's
+2:14
+a lot of ui elements going on first of all we have this app bar and then over
+2:19
+here we have these cards and within these cards we have this ratings we have you know price we have this icon right
+2:26
+over here so there's a bunch of things going on and then once you go ahead and you go to a specific tour
+2:33
+you get redirected to this page and well in this page there's even more going on so we have this image and we also have
+2:40
+this cool collage of images as you can see that you can scroll so you can learn
+2:45
+more about the tour through these images then we have this text over here just telling us about the ticket and then we
+2:51
+have these this accordion that shows you all of the frequently asked questions and then over here at the very bottom
+2:57
+let me just zoom in here you can see that there's this fixed uh bottom navigation and the there's this button
+3:03
+that says book now and what that does is it triggers a modal with um with a calendar and you can actually go
+3:09
+ahead and book now none of this will be functional but this is just for purposes of teaching you material ui so there's
+3:17
+actually a lot of things going on and if we had to build all these things from scratch well it would take us a very
+3:22
+very long time but you're going to be surprised how easy it is to build something like this
+3:27
+with material ui because all of the ui elements are already pre-built so well
+3:32
+that's enough of that let's actually just get right into it into the next section
+3:38
+like i said in the introduction it is super super important to get a good handle on the docs because there's so
+3:45
+many different components out there in material ui so in this section and all the previous
+3:51
+sections what we're going to do is focus in on a specific goal and then we're going to go to the docs to try to
+3:56
+accomplish that goal so the first thing that i want to do is let's go over here to our demo what we
+4:02
+want to accomplish i want to just simply build out this card very simple and so
+4:08
+nothing insanely difficult and so what we're going to do is we're going to go to the docs and learn exactly how we can
+4:14
+build out something like this so the first thing that we need to do is to create a react application and that's
+4:21
+exactly what i did i created a bare bone react application as you can see right over here let me
+4:27
+just zoom in once more so as you can see here we have just a bare bone react app and what i'm going
+4:34
+to do is i'm just going to do a quick uh cleanup so i'm going to get rid of everything in here so let's get rid of
+4:40
+that and then over here we can get rid of this and let's save that
+4:47
+and actually let's keep the app.css but inside of the app.css what i'm going
+4:52
+to do is i'm going to also get rid of all of these styles so we're just doing a little bit of cleanup here
+5:00
+and then let's uh now let's go ahead and download material ui
+5:05
+inside of our react application now of course to do this let's go to the documentation and once we go to the
+5:12
+documentation you can see that we have this getting started tab let me zoom in here once more
+5:17
+you can see here that we have this getting started tab and over here you can see installation so let's go ahead
+5:23
+and install this and you can see here that to install this package what we need to run is npm
+5:30
+install at mui slash material and there's some other libraries that we can
+5:35
+also install as well that are complementary to material ui so let's go ahead and copy this
+5:42
+we're gonna go ahead and copy that and we're just gonna paste that into our terminal so let's go here let's paste
+5:48
+that in and that should be a okay so once we wait let's actually go back to
+5:55
+our um to the installation docs and let's scroll down and you can see here
+6:00
+that it says material ui was designed with roboto font in mind so to be sure
+6:06
+to so be sure to follow these instructions for instance via google font web so essentially what it's saying is it wants
+6:13
+you to take this link tag and append it inside of your index.html because this
+6:18
+is the google font that links it to the roboto font so let's go over here
+6:23
+and let's go to the public and let's actually paste that link in as well so we're going to go here
+6:29
+and we're going to paste in that link so we can have the roboto font
+6:36
+inside of our application all right so that is terrific the last thing that i want to do is i
+6:43
+want to go to my index dot css file
+6:48
+so inside of this index.css file i want to just get rid of these default styles
+6:53
+and i want to have a style that applies to every single element so we're going to have over here this wild card the
+6:59
+star and this means that hey i want a specific style applied to every single element so what i want is if if we don't
+7:06
+specify any margin i want the margin to initially be zero and then what i also want is the padding
+7:13
+to initially be zero if it's not specified i want the box sizing to be border box
+7:21
+and then also let's say that the font family is going to be roboto so font family and we can say roboto for this
+7:28
+all right so very very simple so now if we were to go to our react application you can see that it is completely empty
+7:35
+so remember now what do i want to do well i want to build this card so let's go to the material ui documentation and
+7:41
+let's go to the components section so in this component section you can see here that there's different categories
+7:48
+there's input autocomplete button checkbox well i don't really need an input data display this isn't really
+7:55
+data display feedback this isn't really feedback as well let's go over here we have surfaces
+8:01
+okay surfaces seems like exactly what i need and you can see here that there's actually two different components that
+8:07
+we might be able to utilize card or paper now let's actually go ahead and click on
+8:13
+card and you can see here that this is well exactly similar to
+8:19
+what we want we want to have a card like this so okay we found our component and what
+8:25
+we can do is we can actually click on the source code just to see exactly how it was built out
+8:32
+so this is terrific however i actually personally do not want to use card i
+8:38
+actually prefer to use paper so paper is very very similar to card
+8:43
+except it just gives it more of a paper feel if you will so let's go ahead and let's click on
+8:49
+paper and this is really just a personal preference so if you click on paper you can see here that it kind of looks
+8:55
+more like a paper if you will and you can see that well all you need to do is get this
+9:01
+paper component and we pass it in a prop of elevation and you can see that the more elevation
+9:07
+it has the more it feels that it's elevated from the surface and if we were to scroll down over here you can see
+9:14
+some other props you can also give it variant outlined we can also give it square to make it square rather than
+9:20
+rounded and you can see here all of the different elevation levels so you can see elevation of zero it's not elevated
+9:25
+at all elevation of one it seems like it's barely elevated whereas an elevation of 24 it seems like it's just
+9:32
+really floating out of the surface the the um the design is basically a box shadow
+9:39
+or something like that so let's go ahead and let's utilize paper so what i'm going to do here is i
+9:45
+am going to go to source and i'm going to create a components directory
+9:51
+and in here i'm going to create a tour card dot js file
+9:57
+and let's go ahead and let's create a just a very simple function based
+10:03
+component so let's go here and we're going to say tour card
+10:09
+and then here we're just going to return a very simple div for now so just go ahead and do that
+10:15
+and inside of this div i'm just going to say hello so what i'm going to do is i'm going to take this div let's just get rid of all
+10:22
+this and of course what we need to do is export default so let's export default to her card
+10:29
+so i'm going to take this div and i'm just gonna place it right in here or i'm gonna take the component and place it
+10:34
+right in here so i'm gonna say tour card and i'll notice that it auto imported
+10:39
+and if we save that and we go to our app you can see that we should see this hello right over here
+10:45
+awesome so i'm zoomed in four hundred percent for you it's probably going to be significantly smaller
+10:50
+so now let's actually go ahead and start utilizing this paper uh paper component
+10:55
+this ui element inside of our card so in order to do this let's actually look at the source code here
+11:02
+and you can see that the source code all we need to do is import this paper component from at material ui slash
+11:10
+material slash paper so let's go ahead and do that
+11:17
+so let's go ahead and let's import that in and we don't want to import it in here
+11:23
+we want to import it in the tour card so let's go here we're going to import that in
+11:28
+and then what we're going to do is we're going to wrap this instead of being inside of a div we're going to wrap it inside of a paper component that we get
+11:37
+from material ui so let's go ahead and just save that and let's see how that looks here so you can
+11:42
+see that automatically looks a little bit different so you can see that we have a little bit of a box shadow there's a little bit of an elevation now
+11:49
+of course what we can do to change the elevation is just pass elevation elevation
+11:57
+and we can give the elevation whatever value we want so we can say 10 if we want to now you can see here that it seems like
+12:03
+it's more elevated i'm going to say 3 personally i like that so i'm going to say 3. and of course we could also say
+12:10
+square to make it more squared i think i spelled that incorrectly square so now you can see that it's
+12:16
+squared as you can see look at the corners and when i remove it it's going to be more rounded so let's go here you
+12:22
+can see that now it's rounded i i personally prefer it being grounded and we could also say variant and we can say
+12:28
+something like outlined if we want to and now you can see that there's an outline around it but there's no box
+12:35
+shadow and i honestly do not prefer that i like the box shadow so let's just say elevation
+12:41
+all right so you can see here that we went ahead and created a very very
+12:46
+simple uh component and we did that by reading the documentation and that's
+12:51
+what we're going to be doing thoroughly throughout this crash course so this is a great step however there's
+12:58
+a huge problem so if you look at our card right now and let me just zoom out you can see that
+13:03
+our card is relatively small obviously it doesn't span the whole width
+13:08
+of our screen it's relatively small and you can see that it's it's centered
+13:14
+all of our content is centered in the middle as you can see here somewhere in
+13:20
+the middle so you can see that there's some spacing here and there's also some spacing here and obviously our card is a
+13:26
+lot smaller so how can we accomplish this with material ui we can actually
+13:31
+accomplish this with layouts and we'll get to that in the next section
+13:37
+so the first thing that i want to do is this effect right over here i want to put everything right in the center with
+13:44
+a little bit of spacing in the left and the right so a little bit of spacing horizontally
+13:49
+so how can we accomplish this well let's go to the documentation let's go to the components section and then in
+13:56
+the components section let's scroll down until we find the layouts category and
+14:02
+as you can see here this is the layouts category and over here we have a bunch
+14:07
+of different components that we can utilize to better lay out all of the
+14:12
+other components within our application so these components are just strictly
+14:18
+for laying out our application so the first thing that we're going to look at and we're going to look at many
+14:24
+of these but the first thing we're going to look at is container let's go ahead and click on container and you can see
+14:29
+here that the container centers your content horizontally it's the most basic
+14:35
+layout element okay so what does this mean so it centers everything horizontally let's actually scroll down here and you can
+14:43
+see that it does exactly what i want right over here you can see what it does is it doesn't take up the entire width
+14:51
+and then it also centers this content horizontally so this right here is the container
+14:57
+and then everything outside isn't the container and this is exactly what i want over here so i want to have a
+15:02
+container that doesn't take up the entire width and then centers it horizontally so that's exactly what we
+15:08
+are going to utilize is the container component and over here you can see we can also
+15:14
+give it a max width if you want to you can also take a look at the source code just to see exactly how things are done
+15:20
+so what we can do here is you can just import container and let's actually put this inside of
+15:25
+the app so we're going to import container from material ui and we're going to put this
+15:30
+inside of the app so that everything inside of the application is going to be
+15:35
+nice and centered so let's go here and let's just get rid of this uh let's
+15:42
+go over here let's add a container component
+15:47
+we're gonna say container i'm gonna of course close it off and that's pretty much all we need to do and now if we were to go over here you
+15:54
+can see that now it is nice and centered and it's not spanning the entire width
+16:00
+however of course there is still a problem now it's spanning the entire width of the container and obviously
+16:06
+that's not what i want i want it to be uh you know relatively small i want to be able to fit four of them four cards
+16:13
+inside of a container with a little bit of spacing now how can we accomplish this
+16:19
+well there's actually a few ways that we can accomplish this if we are not using material ui from a styling purpose we
+16:25
+can probably use something like flexbox or grid in this video what we're going to do is
+16:32
+we're going to use the grid and the reason for this is because if we go back over here you can see that
+16:38
+we have this grid component that is going to simulate the grid css layout
+16:45
+so over here what we can do and if you don't know grid that's completely fine over here what we can do is you can see
+16:51
+that we can actually accomplish something that looks exactly like this by having well components that look like
+16:57
+this so what we can do here is you can have a grid container so you can have this grid
+17:02
+container and we specify that this is a grid container by saying container and then we're going to say that any any
+17:09
+item within this container is going to have a spacing of two so over here this spacing right here is two
+17:16
+and then in here we're also going to have these same grid components but we're going to specify that this is going to be an item
+17:22
+we're going to give it a size of 8. so in grid the total size horizontally in a
+17:30
+specific row is 12. so by saying 8 that means it's going to span 8 out of 12 of
+17:37
+the row so if i can do that math correctly 8 divided by 12 that's 4
+17:42
+divided by 6 which is 2 divided by three so around yeah
+17:47
+sixty-six percent as as you can see here that is going to be 66 percent of this
+17:52
+specific row and then over here we have this other grid item and this is four
+17:58
+well that's going to be the other uh 33 and as you can see here we have the other 33
+18:04
+now if i wanted to accomplish something like this so i can have four evenly uh
+18:10
+evenly sized cards within a row then what i would have to do is give this a
+18:15
+um xs of three so that we have three three three three which equals to twelve
+18:22
+so we're gonna do something like this so the first thing of course that we need to do is we need to wrap everything
+18:28
+inside of the grid container so let's go ahead and do that and we're actually going to do that inside of the
+18:36
+uh inside of the app.js component so let's go ahead and do that right now
+18:42
+so let's go here and let's actually just remove the
+18:48
+should we remove this i say i say we leave it let's just leave it for now and what i want to do is i want to wrap the
+18:55
+tour card within a grid grid component so we're going to say
+19:00
+import we're going to import grid from at
+19:05
+material ui and the reason why we're doing at material ui slash and then
+19:11
+whatever it is that we want whereas you can we could also do something like this which is a little bit cleaner just destructure out
+19:18
+um everything that we need over here so container and then grid we could do it this way
+19:25
+but the reason why i like to do it this way is that we're specifically asking for the gradient we're not going
+19:32
+to get anything additional imported into this component so let's go here and we're going to say
+19:37
+grid we're going to specify that this is going to be a container and we're also
+19:43
+going to give it a spacing of let's give it a spacing of
+19:49
+let's give it a spacing of 5. and then in here we're gonna have our tour card now our tour card we also need to import
+19:55
+this because our tour card is gonna be the item so the item itself the grid
+20:01
+item so let's go here and now wrap this with the grid item so
+20:08
+we're gonna say here grid we're gonna close that off we're gonna say that this is a grid item
+20:16
+so a grid item and we're gonna give it an x x
+20:21
+s that is equal to three so that we can have four different uh cards inside of
+20:28
+our row let's go ahead and paste back the paper and that's really all we need and now if
+20:34
+we went over here you can see that our card is nice and beautiful how terrific
+20:39
+is that really really good layout so now if i were to add
+20:45
+you know four three more cards you can see that it's nice and laid out
+20:50
+correctly the way that i wanted to now if i change my mind i was like okay i actually want to have uh three cards per
+20:57
+row then i would just very simply change this item over here to four because remember four plus four plus four that's
+21:04
+going to be equal to 12. that means three cards and of course if i want to also reduce the spacing i can do two
+21:10
+here i can do whatever it is that i want i like five and also i want to change this to back to four
+21:16
+all right so that's pretty much all it is that we need for layouts and of course there's gonna be other layout
+21:23
+components that we are gonna get into so box is a very popular one that we're gonna get into and also image list we're
+21:30
+going to get into that as well stack and hidden are we're not going to get into of course we're not going to get into everything but you know hopefully you
+21:36
+guys kind of understand the premise of this all right so let's actually move on
+21:41
+and and let's actually just make this component or make this card component look like this right over here because
+21:47
+it's kind of looking pretty ugly right now in this section what we're going to do is finish off our card component because
+21:55
+right now it looks like this of course we want it to look like this so let's quickly inspect what's going on
+22:02
+here well of course we have the image itself at the very top but what i want to focus in on is this
+22:08
+section right over here you can see that this section is filled with text we have
+22:14
+the title the duration the reviews as well as the price and you can see that
+22:19
+this text is formatted and styled differently this one's large and skinny the font weight is a little bit small
+22:26
+this one's a little bit smaller this is small but this is even smaller than that whereas this one's larger and bold
+22:33
+so how are we going to deal with text inside of material ui
+22:38
+well there's actually a good way of dealing with it because there's a component inside of material ui called
+22:44
+typography and we're going to use that component to build this text right over
+22:49
+here and format it the way that we want it to so let's get right into it but before we
+22:55
+do that let's actually start off with the image the image is i think the easiest thing to do so let's go ahead and do that
+23:01
+so let's go here to our tour card and inside of our tour card the first
+23:06
+thing that i want to do is i want to add the image so let's go inside of the paper let's remove the
+23:13
+hello and we want to add an image now is there an image component inside of material ui
+23:20
+if you do some digging around no there isn't so what you're going to need to do is just simply use a
+23:26
+image tag so go ahead and use this image tag and inside of this image tag what we're going to do
+23:33
+is we are going to supply it with an image url i'm just going to go ahead and copy this i'm going to do copy image
+23:39
+address and you can go ahead and take all this data from my github page and i'll link
+23:44
+it in the description below or you can just search for any picture of niagara falls and just put it inside of your
+23:50
+source so at this point you can see here that we get this right over here so each card
+23:55
+has this image obviously this isn't exactly the way that we want it we want to style it a little bit differently so
+24:02
+the best thing to do in this case is to add some styles so let's actually go to our uh let's go
+24:08
+to our app.css and in here we're going to add some styles for the image so
+24:14
+let's give this a a class of image and then here this is where we're going to apply some of these styles that we need
+24:21
+for the image so we're going to say that we want this to have a width of 100 so span the width of the card as well as a
+24:29
+height of 5 rams and then once we go over here to the tour card we can actually give this a
+24:35
+class name of image and now if we were to go over here you
+24:41
+can see that this is looking a lot better okay cool so now what i want to do is i want to
+24:47
+move on right over here to the typography so let's go to our tour card and then
+24:55
+inside of our tour card well let's go ahead and import that typography
+25:00
+component so to import that let's actually try to find it inside of the documentation
+25:06
+let's go here let's try to find it uh where could it be let's do a quick search tie
+25:12
+pograph and there we go it's right here under data display
+25:18
+so let's go click on that and you can see here that it's using roboto okay we already have that that's
+25:24
+completely fine and you can see here all of the different types of fonts you can see this is how an h1 is going to look
+25:30
+and h2 is going to look and h3 is going to look and over here we have different paragraphs etc
+25:36
+so this is really cool this is exactly what we want so how do we utilize this well we utilize this by using the
+25:43
+typography component as you can see right over here and we're going to pass in two props we're going to pass in the
+25:49
+variant and then we're going to pass in the component so the variant is how this is going to
+25:56
+look so if we say that the variance is going to be h1 then it's going to look like this then
+26:02
+this typography is going to look like this however the component is saying well
+26:08
+what html element is going to be in this case we're going to say h2 so right here
+26:14
+what we have is an h2 element that looks like an h1 so over here so this right
+26:21
+here would be an h2 elements and this is really cool so maybe sometimes we want something really large
+26:27
+as large as an h1 but we want it to be an h2 we can go ahead and do that with the variant and component
+26:34
+so let's go ahead and start with the title so the title is the first thing
+26:39
+that we want to do so let's go here to our uh let's go to here and let's see
+26:46
+how things are imported so let's just go here let's look at the source code and typography where is
+26:54
+typography let's go here to the source code and you can see we can import typography
+27:02
+so we're going to import typography and then right in here what we want to
+27:07
+do is we want to supply it with the tour name so what we can say is right under the
+27:13
+image what we can have is a typography component typography
+27:19
+component and let's close it off we're going to say here the tour is immersed into the
+27:25
+falls immerse i don't even know how to spell that i forgot how to spell it immerse into the false i'm just going to copy it
+27:32
+so immerse into the falls and what we're going to do is i want this to actually be an h2 because it's pretty important
+27:37
+but it's not a header so i'm going to say h2 and let's actually give it the variance
+27:43
+of h2 as well so we're going to say variant of h2 just to see how it looks like h2
+27:51
+and now if i were to come here okay this is a lot bigger than i wanted okay maybe
+27:56
+i can change it to an h4 so this way is it's still going to be in h2 but the the the look of it is going to be a little
+28:02
+bit different and just to prove it to you you can actually go ahead and inspect this and you can see that it's
+28:07
+an h2 all right this is also very very big so well what can i do here i'm a little
+28:14
+stuffed let's go back to the documentation and inside of the documentation you can
+28:20
+see all of the different types that we have so we have h1
+28:25
+h2h3h4h5h6 but we also have subtitle and then subtitle and we also have body and
+28:31
+body i think actually subtitle might work best for me and of course you can
+28:36
+always take a look at the examples that they have i want something that looks like this or like
+28:41
+this so i'm going to use subtitle for this and so let's go over
+28:47
+here and let's use i'm wondering let's use subtitle one so we're going to say sub
+28:55
+title one i think this is good and we're going to give it a component of h2
+29:01
+and now right away you can see okay this is looking good this is incredible
+29:06
+uh okay now the one thing that i'm noticing here is over here we have a little bit of padding so we have this
+29:13
+padding so so this image doesn't have any padding but anything inside of here any of the text
+29:18
+has this padding so that it's not immersed right into the walls obviously over here well we don't have
+29:25
+that padding so maybe we can actually fix this and we're actually going to use another layout component to fix this
+29:33
+so to fix this what we're going to do is we're going to import box this is going to be another
+29:39
+important layout component and this box component simply acts as a div as a wrapper for
+29:47
+all of the other elements that we want so we're going to get this from box
+29:53
+so box and over here again you can just simply treat this as a div so over here we're
+29:58
+gonna say box we're gonna wrap it inside of the box now this of course doesn't do
+30:04
+anything because now what we need to do is apply some styling inside of this box
+30:10
+so what we can do here actually is just say padding and then inside of padding we can very
+30:15
+simply say one and what this will do is it give us padding in the x-axis as well as the y-axis and now you can see that
+30:22
+we have this good padding that we wanted all along so actually i do not want this padding
+30:29
+to be um on the top i just want it to be left and right
+30:34
+so maybe i can actually say having x instead and that way okay that looks a
+30:39
+lot better to me all right cool so what's the next thing that we need
+30:45
+inside of here well we need this right here which is going to be the duration
+30:51
+so let's go ahead and add that in now over here you can notice that we also have this icon so how are we going to
+30:59
+add this icon what i'm going to do is i'm actually going to wrap this this right here this section right over here i'm gonna wrap
+31:05
+it inside of a box as well because i think it's uh it's uh it should be containerized
+31:10
+inside of a div so i'm gonna wrap it inside of a box and i'm gonna give it a display a flex so it can display
+31:17
+horizontally so i'm going to say box now you might be wondering okay well how can i add these
+31:22
+custom styles i can add custom styles by utilizing the prop
+31:27
+s x and then over here you can give it an object of all of these styles that we
+31:32
+want so i'm going to say display flex and i'm also going to say align item
+31:37
+center align items center all right awesome
+31:44
+and then in here well we're going to display some of our uh we're going to display that duration so let's go over
+31:50
+here and let's say typography and i'm going to say let's just hard
+31:56
+code five hours for now and let's give it a variant we're going to give it a variant of body
+32:03
+this time let's say body two so body two and we're also gonna give it
+32:08
+a component of paragraph so it can be a p tag
+32:14
+all right let's go ahead and save that and if we were to come here okay it's looking good it's looking pretty decent
+32:20
+actually it's not bad uh however of course what's happening here is
+32:26
+uh okay so what i need to do is i need to get this box i have to wrap it inside of
+32:31
+this box right over here so i can get the padding get the padding all around now this is a little bit uh
+32:40
+a little bit bigger than i wanted to you can see that this is relatively big uh so i actually don't do not want it to
+32:47
+be this big and i'm going to show you how we can actually um customize these styles a
+32:52
+little bit later of these variants a little bit later but for now we'll just leave it as is
+32:59
+okay so we'll just leave that as this now what we need is the icon so how are we going to get the icon
+33:05
+now in order to get the icon what we need to do is install another library that is associated to material ui so
+33:12
+let's open up our terminal and we're going to do an npm install we're going to say at mui
+33:18
+and then we're going to say icons and then we're going to say material
+33:24
+so let's go ahead and install that and this is going to give us access to a bunch of different material ui icons
+33:31
+so let's just wait to wait wait shouldn't take too too long and once that downloads and it did what
+33:38
+we can do here is import a bunch of icons from
+33:43
+at material ui the package that we just installed at the material ui
+33:49
+slash icons material and what i want and you can of course
+33:54
+explore this all of the different icons that you want but i want the access time
+34:00
+icon so i'm going to say access time and all we need to do to utilize this
+34:06
+icon is just render the components so let's go over here
+34:12
+inside of the second box and we're going to say access time
+34:17
+and let's just render that component and now if i were to save this and refresh
+34:25
+let's see here it's taking a little bit of time let's open up our terminal just to see
+34:31
+what's going on did anything fail uh i guess it's still compiling
+34:39
+it's taking its sweet time to compile so let's uh refresh again i'm just gonna
+34:45
+pause the video and wait until this is done compiling all right so it finished compiling and
+34:51
+now as you can see we have our icon however the icon is a little bit too big
+34:58
+i would like it to be a little bit smaller so what we can do here is we can go to the icon itself and then inside of
+35:05
+the icon we can also supply it with the sx over here and then here what we're going to say is
+35:12
+that this is going to be equal to a width and we're going to say that the width is going to be equal to 12.5 i
+35:19
+just went ahead and played around with it and i found that 12.5 is the best width so if i refresh this you can see
+35:25
+that it's a lot smaller however right now i also again want this text to be smaller but
+35:31
+we just pretty much use the smallest variant so what we're going to need to do is figure out a way to make this
+35:38
+variant even smaller than it is but we'll do that a little bit later uh another thing that i want to do is i
+35:44
+want to have a little bit of spacing between these two let me zoom in a little bit of spacing between the icon
+35:49
+and the text so in order to do that what we can do here is we can just very simply do a
+35:54
+margin left and then we're going to say this margin left is going to be equal to
+36:00
+0.5 and now you can see there's a little bit of spacing there all right awesome
+36:06
+so the next thing that we need to work on is this right over here so let's
+36:12
+actually add this in a box itself because we're gonna have to do some styling as well
+36:18
+so let's add another box in here let's create a box
+36:27
+so right here we have another box and let's also give this
+36:33
+these same styles that we have in this box so we're gonna get the styles
+36:42
+we're going to apply those styles in here and so the first thing that we want to do
+36:47
+is we want the ratings so let's go to material ui and let's actually just explore the
+36:54
+components because there is a component called rating and as you can see here well we can get
+37:00
+the controlled rating where somebody can actually select the rating which makes sense and then
+37:07
+over here we have this read-only rating and this is actually what we want to use
+37:12
+so over here we don't want people to select whatever rating it is you want to show them okay this thought this has 4.5
+37:19
+uh rating so instead of using controlled you want to use read only you can also
+37:25
+say disabled if we ever wanted that or no rating given if you also wanted that
+37:30
+so let's actually look at the source code of how this was created so we're going to have to import rating
+37:36
+so let's go here let's import rating
+37:42
+and then in here let's just go ahead and quickly save this so we can format it better and then in here what we're going
+37:48
+to do is we're going to supply it with the rating so we're going to supply it with the rating and this rating is going to take
+37:55
+in a few props because as you can see here we have the name which is going to be you know whether it's it's controlled
+38:02
+or whether it's read only and then over here we have the value which is going to be
+38:07
+you know whether it's three three out of five stars three and a half out of five stars four four and a half etc and then
+38:13
+over here there's the on change however we don't need an on change because again this is
+38:19
+going to be read only so uh you can see here that this this right here is kind
+38:24
+of similar to what we're going to be using we're going to be using the name read only then we're going to also supply it with a value we're going to
+38:30
+give it this re read only prop as well so let's actually just go ahead and copy
+38:36
+this and uh let's just paste that in there okay that is good very very good
+38:44
+so let's save this and let's actually just give it a value of 4.5 so let's go
+38:50
+here and let's see how that looks at the moment all right so you can see that it's it's
+38:55
+there which is which is really cool uh however there's a few problems for one
+39:00
+it's it's pretty big i want i would love for it to be a little bit smaller and we also gave it a uh
+39:07
+a rating of 4.5 so i think it would be nice to show half the star at the very end rather than the full star i'm not
+39:13
+sure why it's showing all of these stars so there's a few things that we actually need to fix in order to fix this let's
+39:21
+actually go back to the documentation and the first thing is rating precision so if we wanted to use a floating value
+39:28
+which is something like 0.5 we have to specify the precision so over here by
+39:34
+saying a precision of 0.5 that means that we can give ratings that have 0.5 within it so
+39:41
+something like again 2.5 4.5 whatever so if i want if i were to go here and i
+39:46
+say precision and i were to say 0.5
+39:53
+that should fix this issue you can see here now we have uh the half star if i were to however
+40:00
+change this to zero point or 4.75 you can see that well we don't have that
+40:06
+level of precision anymore because remember we specified that this is only 0.5 level of precision
+40:11
+if we wanted to the 0.25 level of precision we can actually put that in
+40:17
+there and it's very faintly it's very small you
+40:22
+can see right here that the star is uh not covered so this this little part of the star
+40:28
+hope you guys saw that uh but of course i just i just want 0.5 i'm okay with that and let's let's give
+40:34
+it uh 4.5 so the next thing that we want to do is you want to make it smaller uh so over
+40:40
+here you can look at the sizing so what we can do is we can just give it a size prop that is either going to be
+40:46
+small or large and by default it's going to be medium so i think i'm going to give it small so let's go ahead here
+40:52
+let's copy this and let's give this a size of small let's paste that right in there
+41:00
+and by doing that you can see that okay now it's looking a lot better
+41:06
+uh okay um there is a little bit of spacing here as you can see so what we can do is to
+41:12
+the box we can give it a margin top so inside of this box that's housing the rating and all of the text you can also
+41:19
+give this a margin we can margin top you can put this in here if you want to or we can just very simply just say margin
+41:25
+top and then we can give this margin top of um
+41:31
+let's give it a margin top of three let's save that
+41:38
+and there we go all right so that's that's pretty good so now what we need is well we need the
+41:44
+4.5 as well as the reviews themselves so let's go ahead and figure out how we can
+41:50
+do that i mean we're going to do that with typography of course so let's go ahead over here
+41:56
+and in here so right after the rating we're going to add another typography
+42:02
+so we're going to say typography so typography and we're going to
+42:08
+actually make this the exact same size as this right over here which is the duration
+42:13
+so over here we can give it the exact same properties uh except we'll give it a margin left of
+42:21
+let's give it a margin left of one point and actually you know we'll leave it leave it as this 0.5 i think is a okay
+42:28
+so in here what we're going to do is we are going to supply it with the rating which is going to be 4.5 so we can
+42:34
+actually end up seeing what the rating is so 4.5 and and this is what i'm talking about
+42:40
+right over here so 4.5 and now what we want is we want this
+42:46
+right over here the number of reviews and you can see that this is extra small however the issue that we're facing here is
+42:54
+uh well the body two is the smallest that we can get so again i'll show you how we can change it a little bit later
+43:01
+but for now what we're going to do is we're going to just say the number of reviews is going to be um
+43:07
+just 655 and we're going to say reviews we're going to wrap this in parentheses
+43:14
+and what i'm going to say for now is this is going to be a body 3 even though this doesn't even exist let's give it a
+43:20
+margin left of 1.5 okay so with that being said you can see
+43:26
+here that it's really big you know we'll fix that a little bit later so the last thing that we need is this
+43:31
+over here which is the price we can put this in its own box as well uh even though it might not be as
+43:38
+necessary but it's good to kind of put things into their own little containers just in
+43:44
+case so over here we can have a box and then we can have another typography i'm just going to copy this typography and this
+43:51
+one's going to be nice and bolded so we're going to say that the variant is gonna be h6 however the uh component itself let's
+43:58
+say h3 and do we need a margin well we need some margin top so we'll say margin top
+44:06
+of zero so margin top of zero all right
+44:12
+so if you were to save this and then over here we can just say from i'm gonna say c for canadian dollars and
+44:18
+i'm gonna say i don't know 147
+44:24
+and if we were to go here you can see that we have our wonderful card so it's
+44:29
+it's it's getting close i mean there's still a lot to do to be quite honest uh but it's getting there you can see when
+44:35
+i zoom out it actually looks a little bit better so it's it's definitely getting there however the issue that
+44:41
+we're facing is that you know we need to be able to customize some of our own fonts because i want to make this a
+44:47
+little bit smaller i want to make this smaller i also kind of want to make this smaller over here so how do we do that
+44:53
+let's get to it in the next section in this section what we're going to do is learn exactly how we can customize our
+45:01
+own styles and we can do that by utilizing theme providers in material ui
+45:09
+so let's just first look at exactly what we want to customize we want to customize the font we want the body to
+45:17
+to be a little bit smaller than it is right now and we want to create a new body three
+45:23
+field and we want to make it extremely small so how can we do this well like i
+45:29
+said we can do this with theme providers so the first thing that we need to do is
+45:35
+to create a theme and we can get that from material ui so what i can do here is
+45:42
+from material ui i can import create theme i'm going to destructure this i'm going to say from material ui i'm going
+45:49
+to say at mui material i'm going to get this thing called create theme
+45:55
+so create theme and then over here what i can very simply do is say theme
+46:02
+is equal to create theme and this is going to be a something that we're going to invoke and
+46:08
+we're going to pass in an object and this is where the customization is going to occur
+46:14
+so the first thing is we have to specify what component we want to customize so we're going to say components
+46:21
+and specifically what we want to customize is the typography the
+46:26
+typography components in material ui so to specify this all we have to say is
+46:32
+mui and then well typography so we're going to say typography and of course we
+46:38
+can do this for any any um any uh
+46:43
+components you can do this for any component that we want but again we want to do this for typography
+46:48
+so let's do it for typography typography
+46:54
+and then what we want to say is well we want to start specifying some of the different variants inside of the
+47:00
+typography so over here we can say variance and then here what we're going to do is we're going to supply it within an array
+47:06
+of variants so and these each array is going to be an object and then the first property in
+47:12
+the object is going to be the props so the props and the props over here we're
+47:17
+going to say that we want the prop that is variant so over here you can see that we have
+47:23
+this property here that is going to be variant and we want this to be equal to
+47:29
+body 2. so if we supply a variant that is equal to body 2 as a
+47:36
+prop then what styles do we want well we want the style
+47:42
+of font size 11. so let's actually just look at this one
+47:48
+more time so we're going to create a theme we're saying that hey we want to manipulate the typography component in
+47:55
+material ui and we want to update the variance and so over here this is going to be an
+48:00
+array so over here we have this prop so over here we have this prop inside of
+48:06
+our array and we're saying that if the variant is equal to body 2 what we want
+48:12
+to do is we want to make sure that the font size is 11. and now let's actually do the same exact
+48:17
+thing but for body 3. so let's go ahead and copy this and over here we're going to say body
+48:24
+three so this right here is going to override body two this one is going to add a new prop and we're gonna change
+48:30
+this one to font size of nine font size of nine
+48:35
+so now how can we utilize this because if i were to save this and then refresh here you can see that nothing has
+48:41
+changed so in order to utilize this what we need to do is to import something else called
+48:47
+the theme provider so over here we can import something called the theme provider
+48:54
+and what we can do is we need to wrap all of the components that we want to
+48:59
+have this specific theme that we created with the theme provider
+49:04
+so i'm just going to wrap it around the the paper so over here i'm going to
+49:09
+say theme provider we're going to close it off we're going to have a closing tag right over here as
+49:16
+well the theme provider and then as a prop
+49:22
+we're going to supply it with the theme and then we're going to say the theme that we just created so theme
+49:29
+so if i were to save this now you can see that it has changed so we
+49:35
+were able to do this now of course we can actually change this to whatever it is that we want we can add multiple styles so we can say hey if if the uh we
+49:44
+also want the background color to be blue for instance so now you can see here we also are
+49:51
+gonna get a blue background color so we can add whatever styles it is that we want of course i don't want that all
+49:58
+right and we could again do this for multiple different components it doesn't matter exactly what the component is
+50:05
+and this is a way that we can customize our styles there's a few more things that we need
+50:11
+to complete in order to finish the landing page so the first thing that we need to do is to add the app bar and
+50:19
+then the second thing that we need to do is need to add this title right over here that shows all of the best tours
+50:25
+for a specific city so let's begin with the app bar
+50:30
+again what we're going to do is we're going to go over here to the documentation and we're going to search for app bar
+50:37
+so let's go ahead and look for it and over here you can see in services we have an app bar
+50:43
+and over here you can see that well there's multiple different app bars that we can utilize
+50:49
+now the app bar is kind of a special component because it's not comprised of
+50:55
+just one component it's actually made up of multiple components so i actually want to use something that looks like
+51:01
+this and you can see here if you were to click on the source code there is an app bar component but it's going to be
+51:08
+sandwiched with a bunch of other components and styles so you can see here we have a bit of styles
+51:15
+we have uh over here more styles for the icon wrapper so there's a bunch of
+51:20
+different things going on and at this point it's actually best to simply just copy this and modify it as
+51:27
+you go so what we can do here is you can just simply copy all this code
+51:33
+and in here we can create an app bar dot js file
+51:41
+maybe you can capitalize the bar and we can just simply paste this in
+51:47
+and over here again i mean a lot of this stuff we've already learned you can see here we have we're using a bunch of
+51:52
+different components and we're kind of uh creating this app bar with it
+51:59
+so i think we're going to leave this as is over here we also have a bunch of
+52:04
+different styles so this is another way of styling components so over here we're
+52:09
+using styled components where we're styling a specific div and we're giving it all of these uh
+52:16
+all of these uh styles and then over here the search icon wrapper we're gonna be using it down here so
+52:22
+this is just another different way of styling our component you can also just use a plain old div and just give them
+52:28
+these styles so i'm just gonna keep this as is and then over here i'm going to just
+52:35
+call this an app bar or we'll leave it as actually search app bar even though it's not really going to have any search
+52:41
+functionality so inside of the app.js what we want to do is we want to we'll utilize the
+52:47
+search app bar but we do not want to put it inside of the container because we wanted to span the width of our entire
+52:53
+screen so if we were to put it inside of the container
+52:58
+you can see here if i were to refresh you can see here that it's only spanning
+53:03
+the width of the container so instead what we're going to do is we're going to move it outside of the container and
+53:09
+we're going to go ahead and save that and now you can see that it's looking a lot better now over here for the margin
+53:16
+let's also give it a margin and we're gonna give it a margin now let's give it a margin of y
+53:23
+inside of the container a margin y that is going to be equal to 5.
+53:28
+so let's go here let's give this a quick refresh actually that doesn't seem to work so
+53:35
+instead of what we're going to do is let's give it an sx and we're going to say here margin
+53:42
+and then we're gonna say margin y of five
+53:49
+and there we go so now we have a little bit of spacing between the cards as well as the app bar
+53:56
+all right so that's that's really cool and again we can customize this however way we want but from for me i'm just
+54:01
+going to leave it as is the next thing that i want to do is i want to add this right over here and i
+54:08
+actually also want to start dynamically displaying some of these inputs
+54:14
+or some of these cards so what i'm going to do is i'm going to go to my github page and over here i have a bunch of
+54:20
+json that is going to contain data for uh for these cards so go ahead a link in
+54:27
+the description below and then what you can do here is inside of the source
+54:34
+create a data.json file and then in here we're going to paste
+54:39
+that json in here so this is going to be an array of objects and then the object
+54:45
+is going to be the the name of the city so the city first and then the city is
+54:50
+going to have a property called tours and then that's also going to be an array of objects and this is going to be each individual tour
+54:57
+so what we're going to do is we're going to iterate over the city to get the city and then we're going to iterate over these cities tours to get the tours so
+55:04
+it's it's not uh insanely difficult actually so let's actually go ahead and we'll do
+55:09
+that right now so in order to do this right now we're working in the app.js
+55:15
+later on we're probably going to migrate from the app.js but for now let's just leave it as is
+55:21
+and so what we want to do is we want to uh well we want to render the
+55:26
+type the city and the city name and then we want to render the cards so for now let's just go ahead and comment this out
+55:34
+i'm just going to comment this out for now and we're going to import these cities from that json data so i'm going
+55:40
+to show cities from and i believe this is going to be from
+55:45
+the same directory data.json okay and we're going to iterate over
+55:51
+that so we're going to say cities dot map and then over here for each city
+56:00
+what i am going to do is return so let's go here we're going to return
+56:06
+and we are going to return typography so we're going to return the typography let's go ahead and import that
+56:13
+notice that it auto imported we're going to say that this is going to be the variance that is equal to h4
+56:22
+we're going to say that the component is equal to h2
+56:28
+we're also going to say that we want a margin margin top that is equal to five
+56:37
+and also a margin bottom that is equal to three
+56:42
+so very very simple and uh of course all we need to do is we need a closing typography tag
+56:51
+and then in here we're gonna say top and then city dot name
+56:57
+and then uh tours so if we were to uh refresh this you can
+57:03
+see here that we get top niagara tours top las vegas tours okay so this is good but now what we
+57:09
+need to do is we need to start iterating over the the tours inside of the city
+57:16
+so what we can actually do here is you can wrap this inside of a fragment
+57:22
+so you can say fragments here so we can leave this typography in and
+57:28
+then what we can do is you can get this grid paste that in there uncomment it
+57:36
+and then inside of the grid inside of this grid what we're going to do is we're going to start iterating
+57:42
+over the city dot tours dot map and then for each tour and we can of
+57:49
+course supply it with eq we should probably do that uh so let's let's uh
+57:54
+we'll supply with the key over here so let's go over here for each tour what we want to do
+58:00
+is we want to return that tour card so we're gonna say here tour card
+58:08
+to our card and what we're also going to do is we're going to pass in the tour as a prop
+58:14
+so to where's the prop unless also uh let's also ask for the index so you can use that as a key
+58:21
+so you can say key which is going to be the index let's go ahead and save that
+58:29
+so now inside of the tour card we have to do a little bit of adjusting so what we need to do is we need to accept the
+58:36
+tour and then in here this is not going to be a hard-coded image instead it's going to be tour dot
+58:44
+img which is if you look at the json it's going to be or actually it's going to be image like this
+58:51
+and then here this is gonna be uh tour dot name i believe let's double check
+58:57
+name over here we're gonna have tour dot duration so tour dot duration
+59:05
+here we're gonna have tour dot rating
+59:11
+also same thing over here and then here we're gonna say number
+59:17
+four views so right over here we're gonna say
+59:23
+tour dot number of reviews and lastly over here we're gonna say tour dot price
+59:32
+okay so now if you were to save this and if we were to go back
+59:37
+you can see that everything has changed so well we completed the very first page
+59:44
+which is really good and i think we learned a lot and now let's move on to the um the next
+59:50
+page so the next page is going to look something like this and honestly this isn't going to be very difficult because
+59:57
+we've already learned a lot of the principles even though this looks a lot more complicated we learned a lot of the principles we learned how to use docs so
+1:00:04
+we're probably just going to breeze through this page so we finished our very first page but
+1:00:11
+now what we want to do is we want to work on the second one in order to create a multiple page application this
+1:00:17
+is where we're going to have to introduce routing to our app so there isn't anything material ui specific here
+1:00:23
+so i do kind of expect you to know how to do this but let's just do it together nonetheless
+1:00:29
+so in order to do this the first thing that we need to do is install a few dependencies so let's go over here to
+1:00:34
+our terminal and we are going to install react router dom so this is the library
+1:00:41
+that we're going to utilize to introduce routing inside of our react app so we're going to do npm install
+1:00:49
+and then we're going to say react router dom react router
+1:00:55
+so let's go ahead and install that in and let's give it a few seconds now we're going to introduce react rotor dom
+1:01:02
+right in here inside of the app.js so what we actually need to do is we
+1:01:08
+need to start moving some of this stuff from the app.js into its own page so
+1:01:13
+inside of the source directory let's create a pages directory and in here we're going to create a home.js
+1:01:21
+file and what i'm going to do in here is i'm just going to go ahead and grab all of
+1:01:26
+this so i'm going to grab all of this and i'm going to create a function based component called home so const home is
+1:01:33
+equal to a function based component that returns all of this stuff right over here
+1:01:40
+and of course we're going to do an export default of home we're also going to need to import all
+1:01:46
+of this over here so let's go ahead and do that
+1:01:51
+and let's go ahead and import that and that should be everything so just to double check that everything is working
+1:01:57
+a okay inside of the app.uh js file you can just render the home component that i'm
+1:02:04
+going to auto import auto import the home component and let's get rid of this
+1:02:10
+and we should get the same exact oh well not really so the issues that we're having here is
+1:02:17
+some uh paths so over here what we can do is we can just move out of there and i believe
+1:02:22
+that should work so if we move out of the pages directory then we hit the components yep that
+1:02:29
+should work and over here we should do the exact same thing and over here exact same thing
+1:02:34
+okay so you can see that it looks exactly the same awesome uh so now what we want to do is we want to
+1:02:41
+introduce react router dom inside of our app.js again kind of expect you to know
+1:02:46
+how to do this already so we're going to import a few things from react router dom
+1:02:55
+we're going to import a browser router
+1:03:00
+we're also going to import routes and route so those are the things that we're going
+1:03:06
+to import and then in here what we're going to do is we're going to wrap this with browser
+1:03:12
+router and then over here we're going to have
+1:03:18
+routes and over here we're going to have a
+1:03:23
+route and this is going to have the path of just slash
+1:03:28
+so path is equal to slash and over here what we want to do is we want to render the element home page
+1:03:37
+so you want to render the home component let's go ahead and get rid of that
+1:03:43
+okay so that's pretty much all it is that we need to do another thing that i'd actually like to do is remove the
+1:03:49
+search bar from here and actually just put it inside of the uh
+1:03:54
+the app component because we're gonna want it for every single one of our pages so we're going to say here search
+1:04:01
+app bar we're going to go ahead and save that and as you can see here this works a ok
+1:04:10
+so now what we need is another page and this page we're going to call it the tour page
+1:04:15
+so we're going to say here tour so tour.js
+1:04:20
+and let's create another function based component for this we're going to say tour and
+1:04:27
+let's have this return a div that just says hello
+1:04:33
+and we're going to do export default tour
+1:04:40
+and then in here we're going to add another route and this is going to be a dynamic path and over here we're going
+1:04:46
+to say that we want to supply it with the id and we're going to do it dynamically that's why we have the colon
+1:04:53
+and over here we're going to say tour and that's it so that's i think all it
+1:04:59
+is that we need so now if we go to slash or whatever so let's say slash three we get hello as you can see here and we
+1:05:06
+also get the navbar so now what we need to do is we need to create the tour component now typically
+1:05:13
+what would happen is you wouldn't do something like slash 5 you would click on a specific tour as
+1:05:19
+you can see here but this isn't really anything material ui specific um this is
+1:05:24
+really just react and react router dom so i'm just going to leave that up to you guys and then over here when we go
+1:05:32
+to an actual tour i'm just going to actually hard code it so no matter what id you go to we're not going to
+1:05:37
+dynamically generate it later on you guys can obviously manipulate it so that you can maybe fetch from a database or
+1:05:43
+fetch from the actual data because again i don't want to take some of the time away from material ui
+1:05:50
+okay so this is what we're going to do we're going to go ahead and try to hard code this right over here and we're
+1:05:56
+actually going to do this whole thing relatively easily in the next section so let's get right into it
+1:06:02
+in this section of the course we're just going to learn about many of the other components inside of material ui and
+1:06:08
+we're going to do this of course by building out this page right over here
+1:06:14
+so let's begin with what we know so the first thing that i want to do is i want to of course wrap this inside of the
+1:06:20
+container because as you can see here we have this container so let's go into our home page or not
+1:06:26
+our home page our tour page let's just completely get rid of this div and let's wrap it with a container
+1:06:32
+let's auto import that in and i personally prefer
+1:06:38
+to get it from slash container like so and in here we can also say hello just
+1:06:45
+to make sure that everything is a-okay now we can also supply this with a width so we can say uh
+1:06:52
+sx is going to be equal to width if i want to make this a little bit smaller than usual so i'm going to
+1:06:58
+say 900 for this and you can see here that now it's nice and wrapped inside of
+1:07:03
+the container so the first thing that we need is this typography immersed into the falls which
+1:07:09
+kind of makes no sense at this point because we're showing las vegas pictures or whatever so let's go over here
+1:07:16
+and let's add a typography component so we're going to say tai pography
+1:07:24
+and inside of this typography let's just say something about las vegas i don't know um
+1:07:30
+you know explore the world and the reason why it's the world is because
+1:07:37
+las vegas or las vegas um they typically have like a bunch of different uh
+1:07:42
+architectures from all around the world they have like pyramids and the the eiffel tower etc so explore the world in
+1:07:50
+vegas i've never been to vegas anyways but i i see pictures and i also play grand theft
+1:07:57
+auto san andreas uh okay so over here what we're gonna do is we're gonna say variant
+1:08:03
+and the variant we're gonna say is three h3 we're gonna say that the component is h1 because it's super important this is
+1:08:10
+the title of it and also let's give it a margin top
+1:08:15
+of let's give it a margin top of three so let's go ahead and save that
+1:08:21
+and now you can see here explore the world in vegas okay so the next thing that we want to do is
+1:08:27
+we want to supply it with the image now the image is really complicated actually
+1:08:32
+we have this image then we have a bunch of these images over here so this is relatively complex
+1:08:38
+so what i what i think is actually a good idea is to create a component for this i'm
+1:08:45
+going to call this an image list component so let's go here we're going to say image image collage maybe collage i hope
+1:08:54
+that's how you spell it i'm not sure let's go over here and let's create a very simple function
+1:09:00
+based component that shows us the image collage so we're going to say image collage
+1:09:08
+and for now let's just return to div an empty div and then let's go ahead and export
+1:09:14
+default this image collage image collage so going back over here to the tours
+1:09:22
+let's actually wrap all this logic inside of a box i think that makes most sense
+1:09:28
+so we're gonna go here we're gonna wrap it inside of a box uh it didn't auto import let's say box
+1:09:38
+okay so now it did auto import i wonder did we use system before i
+1:09:44
+don't really remember using that let's go to home do we have any boxes here
+1:09:49
+let's go into tour card i know we have boxes here yeah we didn't use system let's just use this
+1:09:55
+so let's go back to our tour page let's get the box from here
+1:10:02
+and let's wrap it inside of a box again our box is kind of like a div so let's give this a margin top that is
+1:10:09
+equal to three we're also going to give this a display flex so let's do this display flex we're
+1:10:18
+gonna say flex and okay so that's that's looking pretty
+1:10:23
+good and let's in here let's give it an image and i'm gonna just hard code this image i'm just going to go ahead and
+1:10:30
+just copy this image address you go on the internet find whatever image that you think works perfectly for you and
+1:10:36
+you can also put in an alt i'm not going to do that and let's also supply it with a fixed width
+1:10:42
+of uh let's give it a fix width of
+1:10:47
+um let's uh what what do i want to give it let's give it 400. so yeah let's give it 400. actually
+1:10:54
+no let's give it 325. so now if i were to refresh you can see here
+1:11:02
+that we have our wonderful app so over here the image is a little bit
+1:11:08
+bigger actually this should be height not width we're going to give it a height of 325.
+1:11:16
+i think that's a okay we can also give it a fixed width but i'm not really sure what that width would be
+1:11:23
+let's see here you know what you guys can go ahead and explore i highly suggest just pick this exact same image
+1:11:29
+so that's the first part but now what we want to do is you also want the image collage
+1:11:35
+so as the second part so over here you want to get this image collage and
+1:11:40
+we're going to auto import that and right now it's nothing of course so
+1:11:46
+how can we get this nice cool image collage this seems like a relatively complicated thing to get
+1:11:51
+well let's go over here and we can actually get that from layout image list and you can see all of the different
+1:11:58
+image collage that we can have so we can have this over here uh which is really cool
+1:12:04
+and we can have this so this is is is actually exactly what i have here
+1:12:09
+including the exact same images and how do we how do we do this this quilted
+1:12:15
+image list where we have different sizing between different things well the best thing is is just to look at the
+1:12:20
+source code and see how they did it so they have this list image zoom in here
+1:12:26
+they have this list image this list image item and then in here you can see
+1:12:31
+that they're giving this a width over here and a height for the uh the image
+1:12:36
+you can see that we have four columns and over here we have the row height so how how uh how high is each row
+1:12:44
+and uh then inside of the item you can see that you know we could tell it that hey this
+1:12:51
+is going to span you know two columns or or three columns or anything else etc so over here is all
+1:12:58
+the images as well as well as the pictures so let's actually just go ahead and copy this so this is actually kind
+1:13:04
+of self-explanatory so let's go ahead over here and let's copy that
+1:13:10
+and i'm going to go to the image collage and just very simply paste everything in
+1:13:17
+so let's go here we're going to just paste it in and we're going to use it and we're just going to leave it as is because i personally think it's pretty
+1:13:23
+self-explanatory the only thing that i might want to change is this over here
+1:13:29
+i'm going to say that the width is going to be 300 and the height is going to be
+1:13:35
+325 and let's also give it a margin left of 1.
+1:13:42
+so now if we were to go here you can see that we get our wonderful
+1:13:48
+collage and of course you can change the pictures to whatever it is that you want
+1:13:53
+so now what do we want to do well the next step is the about the ticket and this is
+1:13:59
+actually going to be i think the easiest thing this is just very simple typography
+1:14:05
+so in order to do this let us go over here to the tours and in here we're
+1:14:13
+just going to use that typography component so let's just copy this
+1:14:20
+and right over here maybe you can also put this inside of a box i think that makes the most sense and you can also
+1:14:25
+separate this into their own separate components but i'm not going to do that so we're going to have this box with a
+1:14:31
+typography and let's give this a variant of h6
+1:14:37
+and let's give it a component of h4 and let's give it a margin top believe
+1:14:42
+it as three and over here we're going to say about this ticket
+1:14:49
+so about this ticket and then we're going to use another typography for the paragraph
+1:14:54
+so the paragraph is going to have a variance of well paragraph
+1:15:00
+so paragraph and then we're also going to give this a component of
+1:15:06
+p and then in here let's give it some lower ipsum so all we have to say is lorem and then we say 40 and we get some
+1:15:13
+random text so now you can see here that we get
+1:15:18
+we get everything it that we wanted right over here okay so now the next step is the
+1:15:24
+accordion which is gonna ask us a bunch of different questions so this is gonna be relatively similar
+1:15:31
+let's actually wrap this in a box as well so we're gonna go over here we're gonna wrap this in a box
+1:15:37
+and then we're going to say here frequently asked questions so frequently
+1:15:44
+asked questions save that we're also going to remove
+1:15:50
+this typography because we don't need that and instead of what we want is the accordion of course
+1:15:56
+so let's go into uh let's go into uh the documentation so inside of the
+1:16:02
+documentation what we want to do is we want to find well the accordion so let's go here
+1:16:09
+and let's search maybe we can even use the search we can say accordion and you can see here in surfaces we find this
+1:16:16
+accordion so we can go ahead and look for all of the different accordions that we want
+1:16:21
+you can see here that we get these really cool effects i think i think personally i like the
+1:16:26
+controlled accordion you can also customize the accordions however way we want i personally like this this looks
+1:16:33
+really cool for me so we're going to go ahead and utilize the controlled accordion
+1:16:40
+so let's uh let's actually maybe take a look at some of the other accordions accordion summary
+1:16:46
+uh yeah i think that's a-okay so what i'm gonna do is i'm gonna go ahead and take this
+1:16:52
+accordion and let's just look at the source code for this just so we can understand it so we have an accordion component
+1:16:59
+accordion details accordion summary and so over here we have this controlled
+1:17:05
+accordion okay that makes sense and in here
+1:17:11
+so inside of this uh controlled accordion we have
+1:17:16
+well a bunch of different uh we have a bunch of different components we have the accordion component the accordion
+1:17:22
+summary component we have the typography component so the accordion summary is going to be
+1:17:27
+just the summary which is going to be the stuff in here so you can see here i am an accordion
+1:17:34
+so this is the accordion summary general settings and then in here the accordion details so the stuff actually like
+1:17:41
+inside is going to be the accordion details so yeah that's that's pretty much it so
+1:17:47
+it's really really basic i wonder if there's actually a i think this accordion is a little bit
+1:17:53
+better let's actually use this accordion because this accordion seems a lot simpler
+1:17:59
+yeah and it works exactly the same way we have this accordion accordion summary and this accordion details inside of it
+1:18:06
+so i'm going to do is i'm just going to copy all this
+1:18:11
+copy and we are going to go and create a new component for this i'm just going to
+1:18:16
+call this a core dn dot js and for this we're just going to paste
+1:18:23
+everything in oh my copied way too much let's copy all of this
+1:18:32
+and let's paste everything in here and there we go
+1:18:38
+that's pretty much really all that it all that we need so in here what we can do is very simply just uh get that
+1:18:46
+controlled accordion i believe is or accordion what was it called just i guess it was just called accordion
+1:18:53
+uh no it's called where is it okay customized accordion that's what it's called
+1:18:58
+so you can just get this customize accordions
+1:19:04
+auto import that in and pretty much save it now of course in a real application
+1:19:09
+what we're gonna have is uh we're gonna have uh like this is gonna be fetched from a
+1:19:14
+database of course and it's gonna be dynamic for each person but again this is just a course on material ui and i'm
+1:19:20
+actually not even going to bother changing these things you guys can do that on your own the only thing that i might want to do
+1:19:28
+is go inside here and maybe instead of some you know just
+1:19:33
+margin top let's also give it a margin bottom and we're gonna give it a margin about
+1:19:39
+if maybe two two might work and there we go i think that works
+1:19:44
+so now the very last thing that we need is this right over here this uh book now
+1:19:52
+so you can see here that we have this little footer so we need to actually add that in
+1:19:58
+and how do we do that well we do that by going of course the documentation
+1:20:04
+and there's actually something called a bottom navigation so we can actually utilize this bottom
+1:20:12
+navigation to get this exact same effect that we want however this is going to be a tad more
+1:20:18
+complicated so let's get to it in the next section the last thing that we need to do is we'll work on that bottom
+1:20:25
+navigation that we have right over here so obviously the best thing to do is to go to the docs and we want something
+1:20:32
+similar to this so we want to have our content here and then this bottom navigation right at the bottom
+1:20:38
+so let's take a look at how this is done by clicking on the source code and you can see here okay we have a list of all
+1:20:44
+the items blah blah and over here inside of the paper you can see that we have this bottom navigation so this is
+1:20:51
+exactly what it is that we want so let's actually go ahead and copy this paper
+1:20:57
+and right below the box and let's give this box a margin bottom of
+1:21:02
+10. so right right below this box what we're going to do is we're going to add this
+1:21:09
+paper so do we have paper imported we don't so let's go ahead and import
+1:21:15
+that in so we're going to import paper from we're going to get that from at material
+1:21:21
+ui at mui slash paper
+1:21:27
+we should probably do the same thing for typography as well so let's go here
+1:21:33
+let's get typography typography and get rid of this typography and we
+1:21:39
+also want to get that um that bottom
+1:21:44
+navigation and we actually do not want the bottom navigation action so we can get rid of this you can also get rid of
+1:21:51
+the value as well as the on change we actually do not need that one bit
+1:21:57
+so we can get rid of that and you can also get rid of the show label we don't really need that as well
+1:22:03
+in here all we want to do is just display that one modal so over here let's say
+1:22:09
+bottom navigation bottom navigation and let's go and say hello right in here
+1:22:18
+so now you can see that well we have our wonderful
+1:22:25
+uh fixed footer if you will this bottom navigation however the hello itself isn't
+1:22:31
+displaying and that might be because we need to add the show labels
+1:22:38
+uh show labels prop that's probably not it either i think it might just not display text like this so
+1:22:46
+let's actually go ahead and now add the modal now the modal itself we're gonna add it in a separate component and we're
+1:22:52
+gonna call this modal.js and very similarly to what we've done before we're just gonna go to the docs and just
+1:22:58
+copy and paste what they have for the modal for this we can even search modal
+1:23:04
+and in here so what we want is we want we want a basic modal kind of like this right over here
+1:23:11
+very simple so let's actually look at the source code for this so very simply all it is is a div a
+1:23:18
+button that's going to open the modal and then over here we have the modal itself and it checks whether it's open
+1:23:24
+and then on close it just closes the modal so let's copy this
+1:23:34
+and let's paste that in there and what is this called called the basic modal
+1:23:40
+so let's just copy that in and we're going to just add it right over here
+1:23:45
+so we're going to say basic modal and did i auto import that in seems like
+1:23:52
+it didn't basic modal come on modal okay i guess
+1:23:58
+it's not gonna work let's go ahead here let's say basic modal and we're going to get that from
+1:24:04
+our components and our modal component save that
+1:24:13
+and now if we were to come here you can see that we have this open modal and it works perfectly fine now of course i
+1:24:20
+want to change the text to book now so let's go to the modal itself and to
+1:24:25
+do this what we want to do is we want to change the button to book now
+1:24:31
+okay so that's really all it is that we want and the last thing is we want to utilize the calendar so we want to have
+1:24:37
+a calendar in here rather than having well this random text
+1:24:42
+so again as per usual we're going to do this by looking at the documentation
+1:24:50
+so let's look at the documentation for calendar now calendar is a little bit interesting uh because this is what we
+1:24:57
+want to use right here and you can see that we have this this this uh thunderbolt
+1:25:03
+and essentially what this is saying is that this is actually a premium uh premium feature so if you actually just
+1:25:09
+want to display a calendar just like this for a material ui you actually have
+1:25:14
+to indeed pay for it so this is going to be a premium feature however we can just utilize it for um
+1:25:23
+for uh just development and testing purposes so let's just go ahead and we're going
+1:25:28
+to copy this code let's not really worry about what it does let's just copy the code
+1:25:34
+and again we're going to go in here and we're going to create a date picker
+1:25:40
+so let's create a date picker component date picker.js
+1:25:50
+and right in here we're going to paste in that date picker now of course what we want to do is we want to display that
+1:25:56
+inside of the modal so inside of the modal let's go in here and now what we want to do is we want to
+1:26:02
+update some things so let's get rid of the typography we do not need that one
+1:26:08
+bit all we want is a box and we'll leave the styles as is but what we want to do is
+1:26:13
+we want to display this static date picker range demo
+1:26:19
+so let's go over here let's try to auto import that in
+1:26:25
+there we go auto imported and that's pretty much it so let's go ahead and save that and now
+1:26:32
+if i were to click on uh okay so there's some things that are missing here so there's some packages
+1:26:39
+that we actually need to install like mui lab so let's go to our terminal
+1:26:45
+let's just do an npm install at m ui dash lab
+1:26:54
+go ahead and install that and that should fix this issue
+1:27:02
+okay there we go let's refresh so now we're getting okay so now we also
+1:27:09
+have to install this date functions library maybe i should have probably read the
+1:27:14
+documentation so we're going to say date functions
+1:27:19
+i think at this point everything should be a okay
+1:27:26
+let's give it some time to download and let's refresh this okay cool so now
+1:27:33
+if i click on this you can see that we get our calendar and we can select it however obviously the calendar seems to
+1:27:39
+be cut off because the modal is a little bit too uh small so of course to fix this what we can
+1:27:45
+very very simply do is just adjust the width of the modal
+1:27:50
+so to do this we can just go to our modal right over
+1:27:56
+here and let's adjust the width of this so over here the width is 400 what we could
+1:28:02
+do is just completely remove this width just to make it with auto and if you were to refresh you can see
+1:28:09
+here that now we have our whole calendar and of course obviously it doesn't do anything like this is pretty useless
+1:28:15
+there's no book now button in here there's no prices but again this is all about material ui
+1:28:22
+okay so that's pretty much it that's that's it so we actually learned quite a lot about material ui and
+1:28:29
+i'm happy about it uh and hopefully you guys enjoyed it and i'll see you guys

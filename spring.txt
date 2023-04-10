@@ -1,0 +1,457 @@
+1) Pick the odd one out from below given auto wiring modes?
+By Name, by Type, Constructor, Setter Method
+Answer
+: Setter Method
+2) Beans created in @configuration- annotated class does not support the regular life cycle call
+backs like @ post constructor and @ pre destroy?
+Answer: false
+3) Which architectural layer of spring application is responsible for transactional boundaries and
+providing an entry point for operations on the system as a whole?
+DAO Interface, Persistent Domain Objects, Business Service layer, Presentation layer
+Answer: Business Service Layer
+4) What is Martin fowler suggest for IOC?
+Answer: Dependency Injection
+5) What should be done to control lazy at run time?
+Answer: default-lazy-init=”true”
+6) Which package spring framework provide dependency injection?
+Spring Web, Spring Context, Spring Core, Spring Web MVC
+Answer: Spring Core
+7) Which of the following is common implementation of application context?
+All, classPathXML, Filesystem Context, XmLWebAppllicationCall
+Answer: All
+8) Global session scope really makes sense in context of?
+Portlet based web app, corba, RPC, RMI
+Answer: Portlet based web app
+9) Which is the way to provide configuration Meta data to spring?
+A – XML Based configuration file.
+B – Annotation based configuration.
+C – Java based configuration.
+D – All of the above.
+Answer:
+D , All of the above
+
+10) What is bean wiring?
+Answer:
+The act of creating associations between application components within the spring container is referred to as bean wiring
+11) A bean will almost always have only one id, but if a bean has more than one id, the
+extra ones can essentially be considered aliases.
+True, False
+Answer: True
+12) Which bean scope is default?
+Answer:Singleton
+13) Which content loads a content definition from an XML file in the file system?
+
+
+Answer
+: FileSystemXMLApplicationContent
+
+14) What is the scope of single bean definition which is used for multiple instance?
+
+Ads by ProfitSence
+
+Ans -Prototype
+
+
+15) Which of the following scopes are available only in web application?
+
+Ans – Request, Session, Global Session
+16) Which architecture layer is a layer of interfaces independent of any data access
+technology that is used to find and persist persistent objects?
+Answer: DAO
+17) To access remote stateless session bean using spring application using spring
+application context or Bean factory which one used?
+Ans – SimpleRemoteStatelessSessionProxyBean
+
+
+18) By default the application context created instances of all singleton beans at start up.
+If this default behavior is to be modified, which attribute of the bean element should
+be set?
+Default-init-Method, Default-lazy-init, default-startup, Default-lazy-init
+Answer:
+Default-lazy-init=”true”
+19) Which of the following depicts the initialization of application context which point to
+a single resource in file systems?
+Answer:
+ApplicationConext context=new FileSystem XmlApplicationContext ””
+20) Which one of the following scopes a single bean definition to a single object instance
+per spring IOC container?
+Singleton, Prototype, Request, Session
+Answer:Singleton
+21) Which of the following annotation is used with class indicating the class can be used
+by the IOC container as a source of bean definition?
+1.@configuration 2.@bean 3. @component 4.@configurable
+
+Ans – @configurable
+22) Which of the annotation indicates that the affected bean must be populated at
+configuration time either through an explicit property value in a bean definition a
+
+@Required 2. @Auto wired 3.@Endpoint 4.@Configuration
+Answer: @Required
+23) Which of the following annotation used in auto wiring for associating qualifier values with
+specific arguments narrowing the set of type matches so that the specific bean has chosen for
+each argument?
+1.@Required, 2.@Autowired, 3.@Endpoint 4. @Qualifier
+Answer: @Qualifier
+
+24) The @Autowire annotation can autowire fields, properties and constructors byname not by
+Type
+
+True 2.False
+Answer: False
+25) only looks for annotations on beans in the same application
+context it is defined in
+
+
+True 2.False
+Answer: True
+26) In Spring framework, which package provide a way of removing code duplication between
+classes that aren’t in the same hierarchy?
+AOP, Spring ORM, DAO and Web MVC
+Answer: AOP, Spring ORM, DAO and Web MVC
+27) In Spring which component is responsible for injecting the dependencies for when
+bean get created?
+Answer:
+Container
+
+28) Which of the following is common implementation of application context?
+Answer: All of the above
+29) If you are trying to use session scope with regular spring IOC container such as XML
+bean factory or classpath xml application context you will get?
+Answer: Illegal state exception complaining about unknown bean scope.
+30) Which of the following processor helps in changing the bean configuration interface?
+Answer: post processor is bean postprocessor
+31) Which of the following cannot be applied for auto wiring?
+Answer: String
+32) In spring default constructor is not present the default AutoDetect for auto wiring mode is?
+
+Answer: Bytype
+33) Context annotation configuration always took for annotation on bean in the same
+application context is defined?
+Answer: True
+34) Which of the annotation used with class indicate that the class can be used by spring IOC
+container as a source definition?
+Answer: Configuration
+35) Full form of IOC?
+Answer:
+Inversion of Control
+
+36) Which file used to write configuration in spring?
+Answer: XML
+37) New application context in a new class path?
+Answer: ApplicationContext context = ApplicationContext(“Bean.xml”);
+38) No name is specified explicitly with @resource then default will derive from name or
+from setter method?
+Answer: True
+39) Which of the injection is not supported in spring?
+Answer: Interface Injection
+40) What is used to change configuration at run time?
+Answer:
+Bean Post Processo
+
+
+41) What are the components of spring core container?
+
+Answer: Beans, Core, Context, SpEL
+
+42) How do you turn on annotation wiring?
+A – Add to bean configuration.
+B – Add to bean configuration.
+C – Add to bean configuration.
+D – Add to bean configuration.
+Answer: Addto bean configuration
+43) What is Joint-Point?
+A – This represents a point in your application which joins two objects.
+B – This represents a point in your object where you join values.
+C – This represents a point in your object where you join injected values.
+D – This represents a point in your application where you can plug-in AOP aspect.
+Answer: This represents a point in your application where you can plug-in AOP aspect.
+
+44) By default a bean is lazily loaded?
+Answer:False, By Dfault a bean is eagerly loaded.
+45) How to handle shut down of IOC shut down?
+A – Using shutdownHook()
+B – Using shutdownHandler()
+C – Using registerHook()
+D – Using registerShutdownHook()
+
+Answer:
+Using registerShutdownHook()
+46) What is ACID is transaction management?
+A – Accurate, Controlled, Isolation, Durability
+B – Atomicity, Consistency, Independent, Done
+C – Atomicity, Consistency, Isolation, Durability
+D – Accurate, Controlled, Independent, Done
+Answer: Atomicity, Consistency, Isolation, Durability
+47) Which are IOC containers in spring?
+A – BeanFactory, ApplicationContext
+B – BeanFactory, ApplicationContext, IocContextFactory
+C – BeanFactory, BeanContext, IocContextFactory
+D – BeanFactory, ApplicationContext, BeanContext
+Answer: BeanFactory, ApplicationContext
+48) What is Prototype scope?
+A – This scopes a single bean definition to have any number of object instances.
+B – This scopes the bean definition to a single instance per HTTP Request.
+C – This scopes the bean definition to a single instance per HTTP Session.
+D – This scopes the bean definition to a single instance per HTTP Application/ Global
+session.
+
+Answer: This scopes a single bean definition to have any number of object instances.
+
+49) What are the different modes of auto wiring?
+A – no, byName, byType, constructor, autodetect
+B – no, byName, byType, constructor, autocorrect
+C – byName, byContent, constructor, autodetect
+D – byName, byContent, setter, autodetect
+Answer:
+no, byname,byType,constructor,autodetect
+50) What is contextStoppedEvent event?
+A – This event is published when the Servlet Context is either initialized or refreshed.
+B – This event is published when the Application Context is stopped using the stop ()
+method on the ConfigurableApplicationContext interface.
+C – This event is published when the HTTP Request is received.
+D – This event is published when the HTTP Response is returned.
+Answer: This event is published when the ApplicationContext is stopped using the stop () method
+on the ConfigurableApplicationContext interface.
+51) Which are the modules of data access/integration layer?
+A – JDBC, ORM, OXM, JMS, Transactions
+B – JDBC, ORM, OXM, JMS
+C – JDBC, ORM, Web, Beans
+D – JDBC, ORM, OXM, JMS
+Answer: JDBC, ORM, OXM, JMS, Transactions
+
+52) What is request scope?
+A – This scopes a bean definition to an HTTP request.
+B – This scopes the bean definition to Spring IoC container.
+C – This scopes the bean definition to HTTP Session.
+D – This scopes the bean definition HTTP Application/ Global session.
+Answer: This scopes a bean definition to an HTTP request.
+53) What is constructor mode of auto wiring?
+A – Autowiring by property name. Spring tries to match and wire its properties with the
+beans defined by the same names in the configuration file.
+B – Spring first tries to wire using autowire by constructor, if it does not work, Spring
+tries to autowire by byType.
+C – Autowiring by property type. Spring tries to match and wire a property if its type
+matches with exactly one of the beans name in configuration file.
+D – Similar to byType, but type applies to constructor arguments. If there is not exactly
+one bean of the constructor argument type in the container, a fatal error is raised.
+Answer: Similar to byType, but type applies to constructor arguments. If there is not
+exactly one bean of the constructor argument type in the container, a fatal error is
+raised
+.
+54) What does @required annotation mean?
+A – This annotation indicates that bean property must be populated by the user.
+B – This annotation indicates that bean property is required while saving the bean data
+to database.
+C – This annotation simply indicates that the affected bean property must be populated
+at configuration time, through an explicit property value in a bean definition or through
+autowiring.
+
+D – This annotation indicates that bean property is required while serializing the bean.
+Answer: This annotation simply indicates that the affected bean property must be populated
+at configuration time, through an explicit property values in a bean definition or through
+autowiring.
+
+55) What are the types of advice?
+A – then, after, after-returning, after-throwing, around
+B – When, after, after-returning, around
+C – Where, after, after-returning, after-throwing, around
+D – Before, after, after-returning, after-throwing, around
+Answer: Before, after, after-returning, after-throwing, around
+56) What is true about Bean postprocessor?
+A – It is a concrete class.
+B – It is an interface.
+C – It is an abstract class.
+D – None of the above.
+Answer:
+It is an interface
+57) What is byname mode of auto wiring?
+A – Default setting which means no autowiring and you should use explicit bean
+reference for wiring.
+B – Autowiring by property name. Spring tries to match and wire its properties with the
+beans defined by the same names in the configuration file.
+C – Spring first tries to wire using autowire by constructor, if it does not work, Spring
+tries to autowire by byType.
+D – Similar to byType, but type applies to constructor arguments.
+
+Answer: Autowiring by property name. Spring tries to match and wire its properties with the
+beans defined by the same names in the configuration file.
+58) What is contextRefreshedEven Event?
+A – This event is published when the Servlet Context is either initialized or refreshed.
+B – This event is published when the HTTP Request is received.
+C – This event is published when the HTTP Response is returned.
+D – This event is published when the ApplicationContext is either initialized or
+refreshed.
+Answer: This event is published when the Application Context is either initialized or refreshed.
+59) How to handle shut down of IOC container?
+A – Using shutdownHook()
+B – Using shutdownHandler()
+C – Using registerHook()
+D – Using registerShutdownHook()
+ANS – Using registerShutdownHook()
+
+60) What is PointCut?
+A – This represents a point in your application where you can plug-in AOP aspect.
+B – This is a set of one or more joinpoints where an advice should be executed.
+C – This is used to inject values in objects.
+
+D – This is invoked during program execution by Spring AOP framework.
+Answer: This is a set of one or more joinpoints where an advice should be executed
+
+61) Can we inject values and ref both together in a bean?
+A – True
+B – False
+Answer:
+A , Both values of ref can be injected at a time in a bean.
+62) What is true about cross-cutting concerns?
+A – The functions that span multiple points of an application are called cross cutting
+concerns.
+B – Cross-cutting concerns are conceptually separate from the application’s business
+logic.
+C – Logging is one of the examples of cross cutting concerns.
+D – All of the above.
+Answer:D
+63) What is the correct implementation class of BeanFactory?
+A – XmlBeanFactory
+B – ClassPathBeanFactory
+C – FileSystemBeanFactory
+D – AdvancedBeanFactory
+Answer: .A
+
+64) How to get object of a service in spring framework?
+A – Using new keyword
+B – Using dependency injection
+Answer:
+Dependency injection is used to get object
+65) Which of the following class can be used to call stored procedures in Spring?
+A – SPHelper
+B – JdbcTemplateCall
+C – JdbcTemplate
+D – SimpleJdbcCall
+Answer:D
+66) Which of the following is correct about dependency injection?
+A – It helps in decoupling application objects from each other.
+B – It helps in deciding the dependencies of objects.
+C – It stores objects states in database.
+D – It stores object states in file system.
+
+ANS-
+it helps in decoupling application objects from each other.
+
+67) How can you inject Java collection in spring?
+A – Using list, set, map or props tag.
+
+B – Using lit, set, map or collection tag.
+C – Using list, set, props or collection tag.
+D – Using list, collection, map or props tag.
+Answer: A
+
+68) What is weaving?
+A – Weaving is the process of injecting values in objects to create an advised object.
+B – Weaving is the process of linking aspects with other application types or objects to
+create an advised object.
+C – This is used to inject values in objects.
+D – Weaving is used to check object dependencies.
+Answer: Weaving is the process of linking aspects with other application types or
+objects to create an advised object.
+69) Which class is used to Map a data base row to java object in spring?
+A – ResultSet
+B – RowMapper
+C – RowSetMapper
+D – ResultSetMapper
+
+Answer
+: B, RowMapper
+
+70) What is Advice?
+A – This is the way to instruct object to behave in certain manner.
+B – This is used to inject values in objects.
+C – This is the actual action to be taken either before or after the method execution.
+D – This is not invoked during program execution by Spring AOP framework.
+Answer:
+C, This is the actual action to be taken either before or after the method
+Answer
+execution.
+: JdbcTemplate
+71) Which of the following class can be used to execute the sql queries in spring?
+A – JDBCHelper
+B- JdbcTemplate
+C – DBHelper
+D – DBTemplate
+
+ANS – B
+72) What is Target Object?
+A – A represents an object in your application where you can plug-in AOP aspect.
+B – The object being advised by one or more aspects, this object will always be a proxy
+object, also referred to as the advised object.
+C – This is used to inject values in objects.
+D – This is not invoked during program execution by Spring AOP framework.
+
+Answer:
+The object being advised by one or more aspects, this object will always be a
+proxy object, also referred to as advised object.
+
+73) Which ORM Spring supports?
+A – Hibernate
+B – iBatis
+C – JPA
+D – All of above.
+E – None of above.
+XmlBeanFactory
+Answer:: All of the above D
+74) Can you inject null or empty string values in spring?
+A – Yes
+B – No
+Answer: A
+75) Which is the correct implementation class of Bean Factory?
+A – XmlBeanFactory
+B – ClassPathBeanFactory
+C – FileSystemBeanFactory
+D – AdvancedBeanFactory
+
+Answer: A
+
+76) Which are the modules of Web layer?
+A – WebSocket, Servlet, Web, Portlet
+B – WebSocket, Servlet, Web-MVC, Web
+C – HTML, JSP, WEB, Portlet
+D – HTML, Servlet, WEB, Portlet
+Answer:
+A, WebSocket,Servvlet,Web,Portlet
+77) What is true about collection configuration elements?
+A – This helps in wiring a list of values, allowing duplicates.
+B – This helps in wiring a list of values but without any duplicates.
+C – This can be used to inject a collection of name-value pairs where name and value
+can be of any type.
+D – This can be used to inject a collection of name-value pairs where the name and
+value are both Strings.
+Answer
+: A, This helps in wiring a list of values, allowing duplicates.
+78) Which of the following aspect implementation spring supports?
+A – XML Schema based aspect implementation
+B – @AspectJ based aspect implementation
+C – Both of above.
+D – None of above.
+
+Answer: C
+79) What is bean scope?
+A – Bean scope forces spring to produce a new bean instance as per the scope defined.
+B – Bean scope defines the accessibility of bean in a java class.
+C – Bean scope defines the accessibility of bean in a java package.
+D – Bean scope defines the accessibility of bean in a web application.
+Answer:
+A, Bean scope forces Spring to produce a new instance as per the scope
+defined.
+80) Which class act as an IOC container?
+A – ServletContext
+B – DispatcherServlet
+C – ApplicationContext
+D – None of the above
+
+Answer:
+
+C, ApplicationContext
+
+81) Which package in spring framework architecture supports the implementation using the method
+interceptors?
+a)Spring ORM b)Spring AOP c)Spring DAQ d)Spring core
+Answer: Spring AOP

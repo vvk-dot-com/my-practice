@@ -1,0 +1,338 @@
+// import React, { useState, useEffect } from 'react';
+
+// const WeatherForecast = () => {
+//   const [city, setCity] = useState('New York');
+//   const [forecast, setForecast] = useState(null);
+//   const apiKey = '69c2e6efa0d48a8fe9097f12e646e9dc';
+
+//   const handleSubmit = e => {
+//     e.preventDefault();
+//     setCity(e.target.elements.city.value);
+//   };
+
+//   useEffect(() => {
+//     const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+//     fetch(apiUrl)
+//       .then(response => response.json())
+//       .then(data => setForecast(data));
+//   }, [apiKey, city]);
+
+//   return (
+//     <div>
+//       <h2>Weather Forecast for {city}</h2>
+//       <form onSubmit={handleSubmit}>
+//         <input type="text" name="city" placeholder="Enter a city name" />
+//         <button type="submit">Search</button>
+//       </form>
+//       {forecast && (
+//         <div>
+//           {forecast.list.filter(item => item.dt_txt.includes('12:00:00')).map((item, index) => (
+//             <div key={index}>
+//               <p>Date: {item.dt_txt.split(' ')[0]}</p>
+//               <p>Temperature: {item.main.temp}°C</p>
+//               <p>Feels like: {item.main.feels_like}°C</p>
+//               <p>Description: {item.weather[0].description}</p>
+//             </div>
+//           ))}
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default WeatherForecast;
+
+
+//2nd
+// import React, { useState, useEffect } from 'react';
+
+// const WeatherForecast = () => {
+//   const [city, setCity] = useState('');
+//   const [forecast, setForecast] = useState(null);
+//   const apiKey = '69c2e6efa0d48a8fe9097f12e646e9dc';
+
+//   const handleSubmit = e => {
+//     e.preventDefault();
+//     const newCity = e.target.elements.city.value;
+//     setCity(newCity);
+//   };
+
+//   useEffect(() => {
+//     if (city) {
+//       const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+//       fetch(apiUrl)
+//         .then(response => response.json())
+//         .then(data => setForecast(data));
+//     }
+//   }, [apiKey, city]);
+
+//   return (
+//     <div>
+//       {!forecast && (
+//         <div>
+//           <h2>Enter a city name to get the weather forecast:</h2>
+//           <form onSubmit={handleSubmit}>
+//             <input type="text" name="city" placeholder="Enter a city name" />
+//             <button type="submit">Search</button>
+//           </form>
+//         </div>
+//       )}
+//       {forecast && (
+//         <div>
+//           <h2>Weather Forecast for {city}</h2>
+//           <form onSubmit={handleSubmit}>
+//             <input type="text" name="city" placeholder="Enter a city name" />
+//             <button type="submit">Search</button>
+//           </form>
+//           {forecast.list.filter(item => item.dt_txt.includes('12:00:00')).map((item, index) => (
+//             <div key={index}>
+//               <p>Date: {item.dt_txt.split(' ')[0]}</p>
+//               <p>Temperature: {item.main.temp}°C</p>
+//               <p>Feels like: {item.main.feels_like}°C</p>
+//               <p>Description: {item.weather[0].description}</p>
+//             </div>
+//           ))}
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default WeatherForecast;
+
+
+
+//3rd
+// import React, { useState, useEffect } from 'react';
+
+// const WeatherForecast = () => {
+//   const [city, setCity] = useState('');
+//   const [forecast, setForecast] = useState(null);
+//   const apiKey = '69c2e6efa0d48a8fe9097f12e646e9dc';
+
+//   const handleSubmit = e => {
+//     e.preventDefault();
+//     const newCity = e.target.elements.city.value;
+//     setCity(newCity);
+//   };
+
+//   useEffect(() => {
+//     if (city) {
+//       const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+//       fetch(apiUrl)
+//         .then(response => response.json())
+//         .then(data => setForecast(data));
+//     }
+//   }, [apiKey, city]);
+
+//   return (
+//     <div>
+//       {!forecast && (
+//         <div>
+//           <h2>Enter a city name to get the weather forecast:</h2>
+//           <form onSubmit={handleSubmit}>
+//             <input type="text" name="city" placeholder="Enter a city name" />
+//             <button type="submit">Search</button>
+//           </form>
+//         </div>
+//       )}
+//       {forecast && (
+//         <div>
+//           <h2>Weather Forecast for {city}</h2>
+//           <form onSubmit={handleSubmit}>
+//             <input type="text" name="city" placeholder="Enter a city name" />
+//             <button type="submit">Search</button>
+//           </form>
+//           {forecast.list.filter(item => item.dt_txt.includes('12:00:00')).map((item, index) => {
+//             const date = new Date(item.dt_txt);
+//             const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
+//             const day = date.getDate();
+//             const month = date.toLocaleDateString('en-US', { month: 'long' });
+                        
+//             return (
+//               <div key={index}>
+//                 <h4>{weekday}, {month} {day}</h4>
+//                 <p> <img src={`http://openweathermap.org/img/w/${item.weather[0].icon}.png`} 
+//                     alt={item.weather[0].description} /> {item.weather[0].description} </p>
+//                 <p>Temperature: {item.main.temp}°C</p>
+//                 <p>Humidity: {item.main.humidity}%</p>
+//                 <p>Wind Speed: {item.wind.speed} km/h</p>
+                
+//                 <br></br>
+//               </div>
+//             );
+//           })}
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default WeatherForecast;
+
+//weather data for 5day forecast
+
+import React, { useState, useEffect } from 'react';
+import './WeatherForecast.css';
+
+const WeatherForecast = () => {
+  const [city, setCity] = useState('');
+  const [forecast, setForecast] = useState(null);
+  const apiKey = '69c2e6efa0d48a8fe9097f12e646e9dc';
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const newCity = e.target.elements.city.value;
+    setCity(newCity);
+  };
+
+  useEffect(() => {
+    if (city) {
+      const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => setForecast(data));
+    }
+  }, [apiKey, city]);
+
+  return (
+    <div className="weather-forecast-container">
+      {!forecast && (
+        <div className="weather-search-container">
+          
+          <form onSubmit={handleSubmit}>
+            <input type="text" name="city" placeholder="Enter a city name" />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+      )}
+
+        {forecast && (
+         <div className="weather-data-container">
+            <form onSubmit={handleSubmit}>
+                <input type="text" name="city" className='input'  placeholder="Enter a city name" />
+                <button type="submit" className='search'>Search</button>
+                <h2 className='heading'>Weather Forecast for {city}</h2>
+            </form>
+                <div className="weather-items-container">
+                { forecast.list.filter(item => item.dt_txt.includes('12:00:00')).map((item, index) => {
+                    const date = new Date(item.dt_txt);
+                    const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
+                    const day = date.getDate();
+                    const month = date.toLocaleDateString('en-US', { month: 'long' });
+                    const iconUrl = `http://openweathermap.org/img/w/${item.weather[0].icon}.png`;
+                    return (
+                        <div key={index} className="weather-item">
+                        <h4>{weekday}, {month} {day}</h4>
+                        <p className='a'> {item.weather[0].description} <img src={iconUrl} alt={item.weather[0].description} /> </p>
+                        <p className='b'>Temperature: {item.main.temp}°C</p>
+                        <p className='b'>Humidity: {item.main.humidity}%</p>
+                        <p className='b'>Wind Speed: {item.wind.speed} m/s</p>
+                        </div>
+                    );
+                })}
+                </div>
+          </div>
+        )}
+    </div>
+  );
+};
+
+export default WeatherForecast;
+
+//weather data for 5day forecast with current location data instantly
+
+import React, { useState, useEffect } from 'react';
+import './WeatherForecast.css';
+
+const WeatherForecast = () => {
+  const [city, setCity] = useState('');
+  const [forecast, setForecast] = useState(null);
+  const apiKey = '69c2e6efa0d48a8fe9097f12e646e9dc';
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const newCity = e.target.elements.city.value;
+    setCity(newCity);
+  };
+
+  useEffect(() => {
+    const getWeatherData = (latitude, longitude) => {
+      const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => setForecast(data));
+    };
+
+    const getCurrentLocation = () => {
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          getWeatherData(latitude, longitude);
+        },
+        error => console.error(error),
+        { enableHighAccuracy: true }
+      );
+    };
+
+    if (!city) {
+      getCurrentLocation();
+    } else {
+      const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => setForecast(data));
+    }
+  }, [apiKey, city]);
+
+  return (
+    <div className="weather-forecast-container">
+      {!forecast && (
+        <div className="weather-search-container">
+          <h2>Enter a city name to get the weather forecast:</h2>
+          <form onSubmit={handleSubmit}>
+            <input type="text" name="city" placeholder="Enter a city name" />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+      )}
+	  
+      {forecast && (
+        <div className="weather-data-container">
+          <h2>Weather Forecast for {city || 'your current location'}</h2>
+          <form onSubmit={handleSubmit}>
+            <input type="text" name="city" placeholder="Enter a city name" />
+            <button type="submit">Search</button>
+          </form>
+          
+		  <div className="weather-items-container">
+            {forecast.list.filter(item => item.dt_txt.includes('12:00:00')).map((item, index) => {
+              const date = new Date(item.dt_txt);
+              const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
+              const day = date.getDate();
+              const month = date.toLocaleDateString('en-US', { month: 'long' });
+              const humidity = item.main.humidity;
+              const windSpeed = item.wind.speed;
+              const iconUrl = `http://openweathermap.org/img/w/${item.weather[0].icon}.png`;
+              
+			  return (
+                <div key={index} className="weather-item">
+                  <p>{weekday}, {month} {day}</p>
+                  <img src={iconUrl} alt={item.weather[0].description} />
+                  <p>{Math.round(item.main.temp)}&deg;C</p>
+                  <p>Humidity: {humidity}%</p>
+                  <p>Wind Speed: {windSpeed} m/s</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+
+  );
+};
+
+export default WeatherForecast;
+

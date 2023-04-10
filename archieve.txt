@@ -1,0 +1,18 @@
+{/* {!forecast && (
+      <div className="forecast-search-container">
+          <form onSubmit={handleSubmit}>
+              <label type='text' htmlFor="city" className="b">Enter city name:</label>
+              <input type="text"  className="input" id="city" name="city" value={city} onChange={(e) => setCity(e.target.value)} />
+              <button  type="submit" className="search">Search</button>
+              <h4> Invalid City Name, Please try again</h4>
+          </form>
+      </div>
+    )} */}
+	
+	
+	 {foecast-->
+	 {/* <form onSubmit={handleSubmit}>
+          <h1 className="heading">Weather Forecast</h1>
+          <input type="text"  className="input" id="city" name="city" value={city} onChange={(e) => setCity(e.target.value)} />
+          <button className="search" type="submit">Search</button>           
+          </form> */}
